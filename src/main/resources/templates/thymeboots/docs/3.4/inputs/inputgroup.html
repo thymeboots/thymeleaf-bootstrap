@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html 	
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:tb="http://www.thymeleaf.org/bootstrap">
+<head>
+</head>
+<body>
+	<div th:fragment="inputgroup">
+		<h1><a class="btn-link" id="doclinkinputgroup">InputGroup</a></h1>		    			
+		The <code><</code>tb:inputgroup<code>></code> component wrap one or more  control components.
+		
+		<h2 id="inputgroup_example">Example<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="#" href="#inputgroup_example" style="padding-left: 0.375em;"></a></h2>
+		<div class="bd-example">
+			<tb:column xs="12">
+				<tb:inputgroup prepend="$" append=".00"  >
+				   <input type="text" class="form-control"> 
+				</tb:inputgroup>   
+				<tb:inputgroup prepend="$" append=".00" look="default" >
+				   <input type="text" class="form-control"  value="Look Default"> 
+				</tb:inputgroup>   
+				<tb:inputgroup prepend="$" append=".00" look="default" size="sm">
+				   <input type="text" class="form-control" value="Look Default And Small Size"> 
+				</tb:inputgroup>   
+				
+				<tb:inputgroup>
+				   <tb:facet name="prepend"><span class="input-group-text">$</span></tb:facet>
+				   <tb:facet name="append"><span class="input-group-text">.00</span></tb:facet>      	  										
+				   <input type="text" class="form-control" value="Facet Example"> 
+				</tb:inputgroup>    			    			 			    
+			</tb:column>
+		</div>
+		<div class="card-header">
+			<strong>Html markup </strong>
+			<div class="card-body" style="background-color: white;" >
+				<table border="0" cellpadding="0" cellspacing="0">
+					<tbody>
+						<tr><td class="code"><code><</code>form<code>></code></td></tr>
+						<tr><td class="code">&nbsp;&nbsp;<code><</code>tb:inputgroup prepend="$" append=".00" <code>></code></td></tr>
+						<tr><td class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>input type="text" class="<strong>form-control</strong>"<code>></code></td></tr>
+						<tr><td class="code">&nbsp;&nbsp;<code><</code>/tb:inputgroup<code>></code></td></tr>
+						<tr><td class="code">&nbsp;</td></tr>
+						<tr><td class="code">&nbsp;&nbsp;<code><</code>tb:inputgroup prepend="$" append=".00" look="default" <code>></code></td></tr>
+						<tr><td class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>input type="text" class="<strong>form-control</strong>" value="Look Default"<code>></code></td></tr>
+						<tr><td class="code">&nbsp;&nbsp;<code><</code>/tb:inputgroup<code>></code></td></tr>
+						<tr><td class="code">&nbsp;</td></tr>
+						<tr><td class="code">&nbsp;&nbsp;<code><</code>tb:inputgroup prepend="$" append=".00" look="default" size="sm"<code>></code></td></tr>
+						<tr><td class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>input type="text" class="<strong>form-control</strong>" value="Look Default And Small Size"<code>></code></td></tr>
+						<tr><td class="code">&nbsp;&nbsp;<code><</code>/tb:inputgroup<code>></code></td></tr>
+						<tr><td class="code">&nbsp;</td></tr>
+						<tr><td class="code">&nbsp;&nbsp;<code><</code>tb:inputgroup<code>></code></td></tr>
+						<tr><td class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>tb:facet name="prepend"<code>></code>  <code><</code>span class="input-group-text"<code>></code>$<code><</code>/span<code>></code><code><</code>/tb:facet"<code>></code></td></tr>
+						<tr><td class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>tb:facet name="append" <code>></code>  <code><</code>span class="input-group-text"<code>></code>.00<code><</code>/span<code>></code><code><</code>/tb:facet"<code>></code></td></tr>
+						<tr><td class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>input type="text" class="<strong>form-control</strong>" value="Facet Example"<code>></code></td></tr>
+						<tr><td class="code">&nbsp;&nbsp;<code><</code>/tb:inputgroup<code>></code></td></tr>
+
+						<tr><td class="code"><code><</code>/form<code>></code></td></tr>
+					</tbody>
+				</table>			    				
+			</div>			    							    				
+		</div>
+    </div>
+</body>
+</html >
+
+

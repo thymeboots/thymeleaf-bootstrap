@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html 	
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:tb="http://www.thymeleaf.org/bootstrap">
+<head>
+</head>
+<body>
+	<div th:fragment="navlist">
+		<h1><a class="btn-link" id="doclinknavlist">NavList</a></h1>		    			
+				    				
+		<p>The <code><</code>tb:navLlist<code>></code> tag </p>
+
+		<h2 id="navList_example">Example<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="#" href="#navList_example" style="padding-left: 0.375em;"></a></h2>
+		<div class="bd-example">
+			<tb:row>
+				<tb:column>
+	    			<tb:navList>
+	    					<tb:navLink href="#" type="link" value="Link1"></tb:navLink>
+	    					<tb:navLink href="#" type="link" value="Link2"></tb:navLink>
+	    					<tb:navLink href="#" type="link" value="Link3"></tb:navLink>
+	    			</tb:navList  >    		
+				</tb:column>
+			</tb:row>		    									    					    					
+		</div>
+		<div class="card-header">
+			<strong>Html markup </strong>
+			<div class="card-body" style="background-color: white;" >
+				<table border="0" cellpadding="0" cellspacing="0">
+					<tbody>
+						<tr><td class="code"> <code><</code>tb:navList<code>></code></td></tr>
+						<tr><td class="code"> &nbsp;&nbsp;&nbsp;<code><</code>tb:navLink href="#" type="link" value="Link1"<code>></code><code><</code>/tb:navLink<code>></code> </td></tr>
+						<tr><td class="code"> &nbsp;&nbsp;&nbsp;<code><</code>tb:navLink href="#" type="link" value="Link2"<code>></code><code><</code>/tb:navLink<code>></code> </td></tr>
+						<tr><td class="code"> &nbsp;&nbsp;&nbsp;<code><</code>tb:navLink href="#" type="link" value="Link3"<code>></code><code><</code>/tb:navLink<code>></code> </td></tr>
+						<tr><td class="code"> <code><</code>/tb:navList<code>></code> </td></tr>											 
+					</tbody>
+				</table>			    				
+			</div>			    							    				
+		</div>
+		
+		<h2 id="navList_example2">Layout: vertical<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="#" href="#navList_example2" style="padding-left: 0.375em;"></a></h2>
+		<div class="bd-example">
+			<tb:row>
+				<tb:column>
+	    			<tb:navList layout="vertical">
+	    					<tb:navLink href="#">Link1</tb:navLink>
+	    					<tb:navLink href="#">Link2</tb:navLink>
+	    					<tb:navLink href="#">Link3</tb:navLink>
+	    			</tb:navList   >    		
+				</tb:column>
+			</tb:row>		    									    					    					
+		</div>
+		<div class="card-header">
+			<strong>Html markup </strong>
+			<div class="card-body" style="background-color: white;" >
+				<table border="0" cellpadding="0" cellspacing="0">
+					<tbody>
+						<tr><td class="code"> <code><</code>tb:navList layout="vertical"<code>></code></td></tr>
+						<tr><td class="code"> &nbsp;&nbsp;&nbsp;<code><</code>tb:navLink href="#"<code>></code>Link1<code><</code>/tb:navLink<code>></code> </td></tr>
+						<tr><td class="code"> &nbsp;&nbsp;&nbsp;<code><</code>tb:navLink href="#"<code>></code>Link2<code><</code>/tb:navLink<code>></code> </td></tr>
+						<tr><td class="code"> &nbsp;&nbsp;&nbsp;<code><</code>tb:navLink href="#"<code>></code>Link3<code><</code>/tb:navLink<code>></code> </td></tr>
+						<tr><td class="code"> <code><</code>/tb:navList<code>></code> </td></tr>											 
+					</tbody>
+				</table>			    				
+			</div>			    							    				
+		</div>
+		
+		<tb:card collapsible="true" header="Attributes">
+			<table class="table table-striped table-hover" style="background-color: #fff">
+	          <thead>
+	            <tr><th>Attribute</th>  <th>Default value</th>   <th>Description</th></tr>
+	          </thead>
+	          <tbody>
+	            <tr><td>layout</td>    <td>inline</td>      <td>can be vertical,inline</td></tr>						          						            
+	          </tbody>
+			</table>
+		</tb:card>			    			
+
+    </div>
+</body>
+</html >

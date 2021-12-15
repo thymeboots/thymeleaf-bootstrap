@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html 	
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:tb="http://www.thymeleaf.org/bootstrap">
+<head>
+</head>
+<body>
+	<div th:fragment="spinner">
+		<h1><a class="btn-link" id="doclinkspinner">Spinner</a></h1>		    			
+				    				
+		<p>The <code><</code>tb:spinner<code>></code> tag </p>
+
+		<h2 id="spinner_example">Example<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="#" href="#spinner_example" style="padding-left: 0.375em;"></a></h2>
+		<div class="bd-example">
+			<tb:spinner type="grow"    value="Loading..." ></tb:spinner>
+			<tb:spinner type="border"  value="Loading..." ></tb:spinner>
+			<tb:spinner look="primary" size="lg"></tb:spinner>
+			<tb:spinner look="success" size="md"></tb:spinner>
+			<tb:spinner look="danger"  size="sm"></tb:spinner>
+		</div>
+		<div class="card-header">
+			<strong>Html markup </strong>
+			<div class="card-body" style="background-color: white;" >
+				<table border="0" cellpadding="0" cellspacing="0">
+					<tbody>
+						<tr><td class="code"> <code><</code>tb:spinner type="grow"   value="Loading..."<code>></code><code><</code>/tb:spinner<code>></code> </td></tr>
+						<tr><td class="code"> <code><</code>tb:spinner type="border" value="Loading..."<code>></code><code><</code>/tb:spinner<code>></code> </td></tr>
+						<tr><td class="code"> <code><</code>tb:spinner look="primary" size="lg"<code>></code><code><</code>/tb:spinner<code>></code> </td></tr>
+						<tr><td class="code"> <code><</code>tb:spinner look="success" size="md"<code>></code><code><</code>/tb:spinner<code>></code> </td></tr>
+						<tr><td class="code"> <code><</code>tb:spinner look="danger"  size="sm"<code>></code><code><</code>/tb:spinner<code>></code> </td></tr>
+					</tbody>
+				</table>			    				
+			</div>			    							    				
+		</div>
+		<tb:card collapsible="true" header="Attributes">
+			<table class="table table-striped table-hover" style="background-color: #fff">
+	          <thead>
+	            <tr><th>Attribute</th>   <th>Default value</th>  <th>Description</th> </tr>
+	          </thead>
+	          <tbody>
+	            <tr><td>look</td>        <td>secondary</td>      <td>Look of the Spinner, can be warning , primary , secondary, info , success ,  danger , error, dark , light</td></tr>
+	            <tr><td>size</td>        <td></td>               <td>Spinner size. can be lg, md, sm</td></tr>						          						            
+	            <tr><td>type</td>        <td>border</td>         <td>Spinner type. can be grow, border</td></tr>						          						            
+	          </tbody>
+			</table>
+		</tb:card>			    			
+    </div>
+</body>
+</html >

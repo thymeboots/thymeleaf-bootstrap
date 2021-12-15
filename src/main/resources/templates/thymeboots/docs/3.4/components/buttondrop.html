@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html 	
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:tb="http://www.thymeleaf.org/bootstrap">
+<head>
+</head>
+<body>
+	<div th:fragment="buttondrop">
+		<h1><a class="btn-link" id="doclinkbuttondrop">ButtonDrop</a></h1>		    			
+				    				
+		<p>The <code><</code>tb:buttonDrop<code>></code> tag is drop down button</p>
+
+
+		<h2 id="buttonDrop_example">Example<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="#" href="#buttonDrop_example" style="padding-left: 0.375em;"></a></h2>
+		<div class="bd-example">
+			<tb:row>
+	    		<tb:column>
+	    			<tb:buttonDrop value="Click Me For Open Drop Menu" look="primary">				    					
+	    					<tb:navLink href="#" >Menu Item1</tb:navLink>
+	    					<tb:navLink href="#" >Menu Item2</tb:navLink>				    					
+	    			</tb:buttonDrop >
+	    		</tb:column>
+	    		<tb:column>
+	    			<tb:buttonDrop value="Click Me [Small]" look="primary" size="sm">				    					
+	    					<tb:navLink href="#" >Menu Item1</tb:navLink>
+	    					<tb:navLink href="#" >Menu Item2</tb:navLink>				    					
+	    			</tb:buttonDrop >
+	    		</tb:column>
+	    		<tb:column>
+	    			<tb:buttonDrop value="Click Me [Link]" look="link" size="sm">				    					
+	    					<tb:navLink href="#" type="link">Link 1</tb:navLink>
+	    					<tb:navLink href="#" type="link">Link 2</tb:navLink>				    					
+	    			</tb:buttonDrop >
+	    		</tb:column>						    		
+			</tb:row>
+		</div>
+		<div class="card-header">
+			<strong>Html markup </strong>
+			<div class="card-body" style="background-color: white;" >
+				<table border="0" cellpadding="0" cellspacing="0">
+					<tbody>
+						<tr><td class="code"> <code><</code>tb:buttonDrop value="Click Me For Open Drop Menu" look="primary"<code>></code></td></tr>
+						<tr><td class="code"> &nbsp;&nbsp;&nbsp;<code><</code>tb:navLink href="#"<code>></code>Menu Item1<code><</code>/tb:navLink<code>></code> </td></tr>
+						<tr><td class="code"> &nbsp;&nbsp;&nbsp;<code><</code>tb:navLink href="#"<code>></code>Menu Item2<code><</code>/tb:navLink<code>></code> </td></tr>
+						<tr><td class="code"> <code><</code>/tb:buttonDrop<code>></code> </td></tr>
+						<tr><td class="code"> </td></tr>
+						<tr><td class="code"> <code><</code>tb:buttonDrop value="Click Me [Small]" look="primary" size="sm"<code>></code></td></tr>
+						<tr><td class="code"> &nbsp;&nbsp;&nbsp;<code><</code>tb:navLink href="#"<code>></code>Menu Item1<code><</code>/tb:navLink<code>></code> </td></tr>
+						<tr><td class="code"> &nbsp;&nbsp;&nbsp;<code><</code>tb:navLink href="#"<code>></code>Menu Item2<code><</code>/tb:navLink<code>></code> </td></tr>
+						<tr><td class="code"> <code><</code>/tb:buttonDrop<code>></code> </td></tr>
+						<tr><td class="code"> </td></tr>
+						<tr><td class="code"> <code><</code>tb:buttonDrop value="Click Me [Link]" look="link" size="sm"<code>></code></td></tr>
+						<tr><td class="code"> &nbsp;&nbsp;&nbsp;<code><</code>tb:navLink href="#" type="link"<code>></code>Link 1<code><</code>/tb:navLink<code>></code> </td></tr>
+						<tr><td class="code"> &nbsp;&nbsp;&nbsp;<code><</code>tb:navLink href="#" type="link"<code>></code>Link 2<code><</code>/tb:navLink<code>></code> </td></tr>
+						<tr><td class="code"> <code><</code>/tb:buttonDrop<code>></code> </td></tr>
+						<tr><td class="code"> </td></tr>											
+					</tbody>
+				</table>			    				
+			</div>			    							    				
+		</div>
+		<tb:card collapsible="true" header="Attributes">
+			<table class="table table-striped table-hover" style="background-color: #fff">
+	          <thead>
+	            <tr><th>Attribute</th>   <th>Default value</th>  <th>Description</th></tr>
+	          </thead>
+	          <tbody>
+	            <tr><td>look</td>        <td>secondary</td>   <td>can be link, warning , primary , secondary, info , success ,  danger , error, dark , light</td></tr>
+	            <tr><td>size</td>        <td></td>            <td>can be lg, md, sm</td></tr>						          						            
+	          </tbody>
+			</table>
+		</tb:card>			    			
+	
+    </div>
+</body>
+</html >

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html 	
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:tb="http://www.thymeleaf.org/bootstrap">
+<head>
+</head>
+<body>
+	<div th:fragment="input">
+		<h1><a class="btn-link" id="doclinkinput">Input</a></h1>		    			
+		<p>The <code><</code>tb:input<code>></code> control component extends from html input<p>
+		<h2 id="input_example">Example:<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="#" href="#input_example" style="padding-left: 0.375em;"></a></h2>
+		<div class="bd-example">
+			<h3>Input group:</h3>
+			<tb:formgroup>
+				<tb:input value="Input value" >
+					<tb:facet name="prepend"><span class="input-group-text">$</span></tb:facet>
+				    <tb:facet name="append"><span class="input-group-text">.00</span></tb:facet>      	  					
+				</tb:input>
+			</tb:formgroup>	
+		</div>
+		<div class="card-header">
+			<strong>Html markup </strong>
+			<div class="card-body" style="background-color: white;" >
+				<table border="0" cellpadding="0" cellspacing="0">
+					<tbody>
+						<tr><td class="code"><code><</code>tb:formgroup<code>></code></td></tr>
+						<tr><td class="code">&nbsp;&nbsp;<code><</code>tb:input value="Input value"<code>></code></td></tr>
+						<tr><td class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>tb:facet name="prepend"<code>></code>  <code><</code>span class="input-group-text"<code>></code>$<code><</code>/span<code>></code><code><</code>/tb:facet"<code>></code></td></tr>
+						<tr><td class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>tb:facet name="append" <code>></code>  <code><</code>span class="input-group-text"<code>></code>.00<code><</code>/span<code>></code><code><</code>/tb:facet"<code>></code></td></tr>
+						<tr><td class="code">&nbsp;&nbsp;<code><</code>/tb:input<code>></code></td></tr>
+						<tr><td class="code"><code><</code>/tb:formgroup<code>></code></td></tr>
+					</tbody>
+				</table>			    				
+			</div>			    							    				
+		</div>
+		
+		<div class="bd-example">
+			<h3>Input label:</h3>
+			<tb:row>
+				<tb:column>
+					<tb:formgroup>
+						<tb:input label="Input label"></tb:input>
+					</tb:formgroup>	
+				</tb:column>				
+			</tb:row>
+		</div>
+		<div class="card-header">
+			<strong>Html markup </strong>
+			<div class="card-body" style="background-color: white;" >
+				<table border="0" cellpadding="0" cellspacing="0">
+					<tbody>
+						<tr><td class="code"><code><</code>tb:formgroup<code>></code></td></tr>
+						<tr><td class="code">&nbsp;&nbsp;<code><</code>tb:input label="Input label"<code>></code><code><</code>/tb:input<code>></code></td></tr>
+						<tr><td class="code"><code><</code>/tb:formgroup<code>></code></td></tr>
+					</tbody>
+				</table>			    				
+			</div>			    							    				
+		</div>
+		
+		<div class="bd-example">
+			<h3>Input radio:</h3>
+			<tb:row>
+				<tb:column>
+					<tb:formgroup>
+						<tb:input type="radio" label="Option 1" name="groupOfDefaultRadios2" checked></tb:input>
+						<tb:input type="radio" label="Option 2" name="groupOfDefaultRadios2"></tb:input>
+						<tb:input type="radio" label="Option 3" name="groupOfDefaultRadios2"></tb:input>
+					</tb:formgroup>	
+				</tb:column>				
+				<tb:column>				
+					<tb:formgroup>
+						<tb:input type="radio" layout="inline" label="Option 1" name="groupOfDefaultRadios" checked></tb:input>
+						<tb:input type="radio" layout="inline" label="Option 2" name="groupOfDefaultRadios"></tb:input>
+						<tb:input type="radio" layout="inline" label="Option 3" name="groupOfDefaultRadios"></tb:input>
+					</tb:formgroup>	
+				</tb:column>
+				
+			</tb:row>
+		</div>
+		<div class="card-header">
+			<strong>Html markup </strong>
+			<div class="card-body" style="background-color: white;" >
+				<table border="0" cellpadding="0" cellspacing="0">
+					<tbody>
+						<tr><td class="code"><code><</code>tb:formgroup<code>></code></td></tr>
+						<tr><td class="code">&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>tb:input type="radio" label="Option 1" name="groupOfDefaultRadios2" checked><code>></code><code><</code>/tb:input<code>></code></td></tr>
+						<tr><td class="code">&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>tb:input type="radio" label="Option 2" name="groupOfDefaultRadios2"><code>></code><code><</code>/tb:input<code>></code></td></tr>
+						<tr><td class="code">&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>tb:input type="radio" label="Option 3" name="groupOfDefaultRadios2"><code>></code><code><</code>/tb:input<code>></code></td></tr>
+						<tr><td class="code"><code><</code>/tb:formgroup<code>></code></td></tr>
+						<tr><td class="code">&nbsp;</td></tr>
+						<tr><td class="code"><code><</code>tb:formgroup<code>></code></td></tr>
+						<tr><td class="code">&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>tb:input type="radio" label="Option 1" layout="inline" name="groupOfDefaultRadios" checked><code>></code><code><</code>/tb:input<code>></code></td></tr>
+						<tr><td class="code">&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>tb:input type="radio" label="Option 2" layout="inline" name="groupOfDefaultRadios"><code>></code><code><</code>/tb:input<code>></code></td></tr>
+						<tr><td class="code">&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>tb:input type="radio" label="Option 3" layout="inline" name="groupOfDefaultRadios"><code>></code><code><</code>/tb:input<code>></code></td></tr>
+						<tr><td class="code"><code><</code>/tb:formgroup<code>></code></td></tr>						
+					</tbody>
+				</table>			    				
+			</div>			    							    				
+		</div>
+		
+		
+		<div class="bd-example">
+			<h3>Input checkbox:</h3>
+			<tb:row>
+				<tb:column>
+					<tb:formgroup>
+						<tb:input type="checkbox" layout="inline" label="Option 1"  checked></tb:input>
+						<tb:input type="checkbox" layout="inline" label="Option 2"  ></tb:input>
+						<tb:input type="checkbox" layout="inline" label="Option 3" disabled></tb:input>
+					</tb:formgroup>	
+				</tb:column>
+			</tb:row>
+						
+		</div>		
+		<div class="card-header">
+			<strong>Html markup </strong>
+			<div class="card-body" style="background-color: white;" >
+				<table border="0" cellpadding="0" cellspacing="0">
+					<tbody>
+						<tr><td class="code"><code><</code>tb:formgroup<code>></code></td></tr>
+						<tr><td class="code">&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>tb:input type="checkbox" label="Option 1" layout="inline" checked><code>></code><code><</code>/tb:input<code>></code></td></tr>
+						<tr><td class="code">&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>tb:input type="checkbox" label="Option 2" layout="inline" ><code>></code><code><</code>/tb:input<code>></code></td></tr>
+						<tr><td class="code">&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>tb:input type="checkbox" label="Option 3" layout="inline" disabled><code>></code><code><</code>/tb:input<code>></code></td></tr>
+						<tr><td class="code"><code><</code>/tb:formgroup<code>></code></td></tr>						
+					</tbody>
+				</table>			    				
+			</div>			    							    				
+		</div>
+
+		<div class="bd-example">
+			<h3>Input switch:</h3>
+			<tb:row>
+				<tb:column>
+					<tb:formgroup>
+						
+						<tb:input type="switch" label="Toggle For Option 1"  checked></tb:input>
+						<tb:input type="switch" label="Toggle For Option 2"  ></tb:input>
+						<tb:input type="switch" label="Toggle For Option 3"  disabled></tb:input>						
+					</tb:formgroup>	
+				</tb:column>
+			</tb:row>
+						
+		</div>		
+		<div class="card-header">
+			<strong>Html markup </strong>
+			<div class="card-body" style="background-color: white;" >
+				<table border="0" cellpadding="0" cellspacing="0">
+					<tbody>
+						<tr><td class="code"><code><</code>tb:formgroup<code>></code></td></tr>
+						<tr><td class="code">&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>tb:input type="switch" label="Toggle For Option 1" checked><code>></code><code><</code>/tb:input<code>></code></td></tr>
+						<tr><td class="code">&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>tb:input type="switch" label="Toggle For Option 2" ><code>></code><code><</code>/tb:input<code>></code></td></tr>
+						<tr><td class="code">&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>tb:input type="switch" label="Toggle For Option 3" disabled><code>></code><code><</code>/tb:input<code>></code></td></tr>
+						<tr><td class="code"><code><</code>/tb:formgroup<code>></code></td></tr>						
+					</tbody>
+				</table>			    				
+			</div>			    							    				
+		</div>
+		
+		<div class="bd-example">
+			<h3>Input range:</h3>
+			<tb:row>
+				<tb:column>
+					<tb:formgroup>						
+						<tb:input type="range" label="Custom range"  checked></tb:input>
+					</tb:formgroup>	
+				</tb:column>
+			</tb:row>
+						
+		</div>		
+		<div class="card-header">
+			<strong>Html markup </strong>
+			<div class="card-body" style="background-color: white;" >
+				<table border="0" cellpadding="0" cellspacing="0">
+					<tbody>
+						<tr><td class="code"><code><</code>tb:formgroup<code>></code></td></tr>
+						<tr><td class="code">&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>tb:input type="range" label="Custom range"<code>></code><code><</code>/tb:input<code>></code></td></tr>
+						<tr><td class="code"><code><</code>/tb:formgroup<code>></code></td></tr>						
+					</tbody>
+				</table>			    				
+			</div>			    							    				
+		</div>
+
+		<div class="bd-example">
+			<h3>Input file:</h3>
+			<tb:row>
+				<tb:column>
+					<tb:formgroup>						
+						<tb:input type="file" label="Custom Choose File"></tb:input>
+					</tb:formgroup>				
+					<tb:formgroup>						
+						<tb:input type="file" label="Choose File" custom="false"></tb:input>
+					</tb:formgroup>	
+				</tb:column>
+			</tb:row>
+						
+		</div>		
+		<div class="card-header">
+			<strong>Html markup </strong>
+			<div class="card-body" style="background-color: white;" >
+				<table border="0" cellpadding="0" cellspacing="0">
+					<tbody>
+						<tr><td class="code"><code><</code>tb:formgroup<code>></code></td></tr>
+						<tr><td class="code">&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>tb:input type="file" label="Custom Choose File"<code>></code><code><</code>/tb:input<code>></code></td></tr>
+						<tr><td class="code"><code><</code>/tb:formgroup<code>></code></td></tr>
+						<tr><td class="code">&nbsp;</td></tr>
+						<tr><td class="code"><code><</code>tb:formgroup<code>></code></td></tr>
+						<tr><td class="code">&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>tb:input type="file" label="Choose File" custom="false"<code>></code><code><</code>/tb:input<code>></code></td></tr>
+						<tr><td class="code"><code><</code>/tb:formgroup<code>></code></td></tr>
+
+					</tbody>
+				</table>			    				
+			</div>			    							    				
+		</div>
+		
+		
+		<tb:card collapsible="true" header="Attributes">
+			<table class="table table-striped table-hover" style="background-color: #fff">
+	          <thead>
+	            <tr><th>Attribute</th>   <th>Default value</th>  <th>Description</th></tr>
+	          </thead>
+	          <tbody>
+	          	<tr><td>custom</td>       <td>true</td>       <td>true:custom component is enabled false:custom disabled </td></tr>
+	            <tr><td>label</td>        <td></td>           <td>component label</td></tr>
+	            <tr><td>layout</td>       <td>vertical</td>   <td>can be:inline, vertical ( it is enabled for radio,checkbox,switch input types )</td></tr>
+	            <tr><td>size</td>         <td></td>           <td>can be lg, md, sm</td></tr>
+	            <tr><td>type</td>         <td>text</td>       <td>input types:<br>text,number,radio,checkbox,password,date,file,range etc.<br><strong>switch</strong> is a thymeboots input type , not standart input type  </td></tr>
+	          </tbody>
+			</table>
+		</tb:card>			    			
+
+		<p>Here are the standart input types you can use in HTML: </p>
+		<p>
+			<ul>
+			  <li><code class="w3-codespan">&lt;input type="email"&gt;</code></li>
+			  <li><code class="w3-codespan">&lt;input type="file"&gt;</code></li>
+			  <li><code class="w3-codespan">&lt;input type="hidden"&gt;</code></li>
+			  <li><code class="w3-codespan">&lt;input type="image"&gt;</code></li>
+			  <li><code class="w3-codespan">&lt;input type="month"&gt;</code></li>
+			  <li><code class="w3-codespan">&lt;input type="number"&gt;</code></li>
+			  <li><code class="w3-codespan">&lt;input type="password"&gt;</code></li>
+			  <li><code class="w3-codespan">&lt;input type="radio"&gt;</code></li>
+			  <li><code class="w3-codespan">&lt;input type="range"&gt;</code></li>
+			  <li><code class="w3-codespan">&lt;input type="reset"&gt;</code></li>
+			  <li><code class="w3-codespan">&lt;input type="search"&gt;</code></li>
+			  <li><code class="w3-codespan">&lt;input type="submit"&gt;</code></li>
+			  <li><code class="w3-codespan">&lt;input type="tel"&gt;</code></li>
+			  <li><code class="w3-codespan">&lt;input type="text"&gt;</code></li>
+			  <li><code class="w3-codespan">&lt;input type="time"&gt;</code></li>
+			  <li><code class="w3-codespan">&lt;input type="url"&gt;</code></li>
+			  <li><code class="w3-codespan">&lt;input type="week"&gt;</code></li>
+			</ul>
+		</p>
+
+    </div>
+</body>
+</html >
+
+

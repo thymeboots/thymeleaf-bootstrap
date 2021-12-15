@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html 	
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:tb="http://www.thymeleaf.org/thymeboots">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport"           content="width=device-width, initial-scale=1">
+	
+	<link rel="stylesheet" type="text/css" href="/bootstrap/4.2.1/css/bootstrap.min.css"/>		
+	<link rel="stylesheet" type="text/css" href="/font-awesome/5.11.2/css/all.css"/>	
+	<link rel="stylesheet" type="text/css" href="/thymeboots/3.4.0/css/thymeboots.css"/>	
+	<script src="/jquery/3.0.0/jquery.min.js"></script>
+	<script src="/bootstrap/4.2.1/js/bootstrap.bundle.min.js"></script>
+
+	<title> ThymeBoots</title>
+</head>
+
+	
+<script>
+</script>
+
+<body>
+<tb:container fluid="true">
+	<tb:row>
+		<tb:column>
+			<tb:row>
+				<tb:column>
+					<h4>
+						<p>ThymeBoots</p> 						
+					</h4>
+				</tb:column>
+			</tb:row>
+			<tb:row>
+				<tb:column>
+	    			<tb:accordion expanded-index="0" >
+	    				<tb:tab header="Getting Started" look="white">
+				    		<tb:tabView  tab-position="vertical">  	
+				    			<tb:tab header="Introduction">
+				    				<div th:replace="/thymeboots/docs/3.4/gettingstarted/introduction :: introduction"></div>
+				    			</tb:tab>
+				    			<tb:tab header="Layout">
+				    				<div th:replace="/thymeboots/docs/3.4/gettingstarted/layout :: layout"></div>
+				    			</tb:tab>
+				    			<tb:tab header="Grid">
+				    				<div th:replace="/thymeboots/docs/3.4/gettingstarted/layoutgrid :: layoutgrid"></div>
+				    			</tb:tab>
+				    			<tb:tab header="Row">
+				    				<div th:replace="/thymeboots/docs/3.4/gettingstarted/row :: row"></div>
+				    			</tb:tab>
+				    			<tb:tab header="Column">
+				    				<div th:replace="/thymeboots/docs/3.4/gettingstarted/column :: column"></div>
+				    			</tb:tab>				    			
+				    		</tb:tabView>
+	    				</tb:tab>
+	    				<tb:tab header="Component" look="white">	    				 
+				    		<tb:tabView  tab-position="vertical">    		
+				    			<tb:tab header="Accordion">
+				    				<div th:replace="/thymeboots/docs/3.4/components/accordion :: accordion"></div>
+				    			</tb:tab>		
+				    			<tb:tab header="Alert">
+				    				<div th:replace="/thymeboots/docs/3.4/components/alert :: alert"></div>
+				    			</tb:tab>					    			
+				    			<tb:tab header="Badge">
+				    				<div th:replace="/thymeboots/docs/3.4/components/badge :: badge"></div>
+				    			</tb:tab>		
+				    			<tb:tab header="Button">
+				    				<div th:replace="/thymeboots/docs/3.4/components/button :: button"></div>
+				    			</tb:tab>	
+				    			<tb:tab header="ButtonDrop">
+				    				<div th:replace="/thymeboots/docs/3.4/components/buttondrop :: buttondrop"></div>
+				    			</tb:tab>		
+				    			<tb:tab header="ButtonGroup">
+				    				<div th:replace="/thymeboots/docs/3.4/components/buttongroup :: buttongroup"></div>
+				    			</tb:tab>				
+				    			<tb:tab header="ButtonModal">
+				    				<div th:replace="/thymeboots/docs/3.4/components/buttonmodal :: buttonmodal"></div>
+				    			</tb:tab>		
+				    			<tb:tab header="Card">
+				    				<div th:replace="/thymeboots/docs/3.4/components/card :: card"></div>
+				    			</tb:tab>		
+				    			<tb:tab header="Carosel">
+				    				<div th:replace="/thymeboots/docs/3.4/components/carousel :: carousel"></div>
+				    			</tb:tab>		
+				    			<tb:tab header="Collapse">
+				    				<div th:replace="/thymeboots/docs/3.4/components/collapse :: collapse"></div>
+				    			</tb:tab>	
+				    			<tb:tab header="Icon">
+				    				<div th:replace="/thymeboots/docs/3.4/components/icon :: icon"></div>
+				    			</tb:tab>		
+				    			<tb:tab header="Modal">
+				    				<div th:replace="/thymeboots/docs/3.4/components/modal :: modal"></div>
+				    			</tb:tab>		
+				    			<tb:tab header="NavLink">
+				    				<div th:replace="/thymeboots/docs/3.4/components/navlink :: navlink"></div>
+				    			</tb:tab>		
+				    			<tb:tab header="NavList">
+				    				<div th:replace="/thymeboots/docs/3.4/components/navlist :: navlist"></div>
+				    			</tb:tab>	
+				    			<tb:tab header="Spinner">
+				    				<div th:replace="/thymeboots/docs/3.4/components/spinner :: spinner"></div>
+				    			</tb:tab>		
+				    			<tb:tab header="TabView">
+				    				<div th:replace="/thymeboots/docs/3.4/components/tabview :: tabview"></div>
+				    			</tb:tab>		
+				    		</tb:tabView > 
+						</tb:tab>
+
+	    				<tb:tab header="Forms and Inputs" look="white">
+				    		<tb:tabView  tab-position="vertical">    		
+				    			<tb:tab header="Form">
+				    				<div th:replace="/thymeboots/docs/3.4/forms/form :: form"></div>
+				    			</tb:tab>
+				    			<tb:tab header="FormGroup">
+				    				<div th:replace="/thymeboots/docs/3.4/forms/formgroup :: formgroup"></div>
+				    			</tb:tab>
+				    			<tb:tab header="FormInline">
+				    				<div th:replace="/thymeboots/docs/3.4/forms/forminline :: forminline"></div>
+				    			</tb:tab>
+				    			<tb:tab header="FormLine">
+				    				<div th:replace="/thymeboots/docs/3.4/forms/formline :: formline"></div>
+				    			</tb:tab>	
+				    			
+				    			
+				    			<tb:tab header="Form Controls">
+				    				<div th:replace="/thymeboots/docs/3.4/inputs/inputs :: inputs"></div>
+				    			</tb:tab>
+				    			<tb:tab header="Input Group">
+				    				<div th:replace="/thymeboots/docs/3.4/inputs/inputgroup :: inputgroup"></div>
+				    			</tb:tab>
+				    			<tb:tab header="Input">
+				    				<div th:replace="/thymeboots/docs/3.4/inputs/input :: input"></div>
+				    			</tb:tab>
+				    			<tb:tab header="Select">
+				    				<div th:replace="/thymeboots/docs/3.4/inputs/select :: select"></div>
+				    			</tb:tab>
+				    			<tb:tab header="Textarea">
+				    				<div th:replace="/thymeboots/docs/3.4/inputs/textarea :: textarea"></div>
+				    			</tb:tab>
+
+				    		</tb:tabView>		
+	    				</tb:tab>
+	    				
+	    			</tb:accordion >
+				</tb:column>			
+		
+			
+			</tb:row>
+		
+		</tb:column>
+	</tb:row>
+  </tb:container>  
+   
+
+
+
+
+</body>
+</html >

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html 	
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:tb="http://www.thymeleaf.org/thymeboots">
+<head>
+</head>
+<body>
+	<div th:fragment="introduction">
+			<h1>Introduction</h1>
+			<p><strong>ThymeBoots</strong> is a lightweight <strong>Thymeleaf</strong> framework based on <strong>Bootstrap</strong> (for front-end) that lets you develop Front-end Enterprise Applications fast and easy</p>
+			
+			<tb:card collapsible="true" header="Requirement" >
+				<table class="table table-striped table-hover" style="background-color: #fff">
+		          <thead>
+		            <tr>
+		              <th>ThymeBoots</th>
+		              <th>Thymeleaf</th>
+		              <th>Bootstrap</th>
+		              <th>Jquery</th>
+		              <th>Font Awesome</th>
+		              <th>Html</th>
+		            </tr>
+		          </thead>
+		          <tbody>
+		            <tr>
+		            	<td><strong>3</strong>.<strong>4</strong>.1</td>
+		            	<td>Thymeleaf <strong>3</strong>.0</td>
+		                <td>Bootstrap <strong>4</strong>.2.1</td>
+		                <td>Jquery    3.0.0</td>
+		                <td>Font Awesome 5.11.2 (Free)</td>
+		                <td>HTML5</td>
+		            </tr>
+		          </tbody>
+				</table>
+			</tb:card>			    			
+			
+						
+			<h2> Starter template</h2>		
+			<div class="highlight">
+				<span >&lt;!doctype html&gt;</span > 				
+				<br><span >&lt;html&gt;</span >
+				<br><span >&nbsp;&nbsp;&nbsp;&nbsp;xmlns:th="http://www.thymeleaf.org"
+				<br><span >&nbsp;&nbsp;&nbsp;&nbsp;xmlns:tb="http://www.thymeleaf.org/thymeboots"&gt;</span >
+				<br><span >&nbsp;&nbsp;&lt;head&gt;</span  >				 
+				<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /&gt; 
+				<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;meta name="viewport"           content="width=device-width, initial-scale=1"&gt;
+				<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;link rel="stylesheet" type="text/css" href="/bootstrap/4.2.1/css/bootstrap.min.css"/>&gt;		
+				<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;link rel="stylesheet" type="text/css" href="/font-awesome/5.11.2/css/all.css"/&gt;	
+				<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;link rel="stylesheet" type="text/css" href="/thymeboots/3.4.0/css/thymeboots.css"/&gt;							
+				<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;script src="/jquery/3.0.0/jquery.min.js"&gt;&lt;/script&gt;
+				<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;script src="/bootstrap/4.2.1/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;
+				<br><span >&nbsp;&nbsp;&lt;/head&gt;</span  >				
+				<br><span >&nbsp;&nbsp;&lt;body&gt;</span  > 
+				
+				<br><span> &nbsp;&nbsp;&nbsp;&nbsp;<code><</code>tb:container<code>></code>        </span> 
+				<br><span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>tb:row<code>></code> </span>				
+				<br><span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>tb:column<code>></code> </span>
+				<br><span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...</span>
+				<br><span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>/tb:column<code>></code> </span>				
+				<br><span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>/tb:row<code>></code>	 </span>							
+
+				<br><span> &nbsp;&nbsp;&nbsp;&nbsp;<code><</code>/tb:container<code>></code>        </span>
+				
+				
+				<br><span >&nbsp;&nbsp;&lt;/body&gt;</span>					
+				<br><span >&lt;/html&gt;</span>														
+			</div>
+			
+			<h2> Spring Boot Application Configuration</h2>	
+			<div class="highlight">
+				    <span>package com.github.thymeboots.app;</span> 			
+				<br><span > </span>
+				<br><span>import org.springframework.context.annotation.Bean;</span>
+				<br><span >import org.springframework.context.annotation.Configuration;</span  >				 
+				<br><span >import org.thymeleaf.spring5.SpringTemplateEngine;</span>					
+				<br><span >import org.thymeleaf.templateresolver.ClassLoaderTemplateResolver;</span>
+				<br><span > </span>
+				<br><span >@Configuration</span>
+				<br><span >public class ThymeBootsAppConfig {</span>
+				<br><span >&nbsp;@Bean</span>
+				<br><span >&nbsp;public ClassLoaderTemplateResolver templateResolver() {</span>
+    			<br><span >&nbsp;&nbsp;&nbsp;&nbsp;ClassLoaderTemplateResolver templateResolver = new ClassLoaderTemplateResolver();</span>
+				<br><span >&nbsp;&nbsp;&nbsp;&nbsp;templateResolver.setPrefix("/templates/");</span>
+				<br><span >&nbsp;&nbsp;&nbsp;&nbsp;templateResolver.setSuffix(".html");</span>
+				<br><span >&nbsp;&nbsp;&nbsp;&nbsp;templateResolver.setCharacterEncoding("UTF-8");</span>
+				<br><span >&nbsp;&nbsp;&nbsp;&nbsp;return templateResolver;</span>
+				<br><span >&nbsp;}</span>
+				<br><span >&nbsp;@Bean</span>
+				<br><span >&nbsp;public SpringTemplateEngine templateEngine() {</span>
+				<br><span >&nbsp;&nbsp;&nbsp;&nbsp;SpringTemplateEngine templateEngine = new SpringTemplateEngine();</span>
+				<br><span >&nbsp;&nbsp;&nbsp;&nbsp;templateEngine.setEnableSpringELCompiler(true);</span>
+				<br><span >&nbsp;&nbsp;&nbsp;&nbsp;templateEngine.setTemplateResolver(templateResolver());</span>
+				<br><span >&nbsp;&nbsp;&nbsp;&nbsp;<strong>templateEngine.addDialect( new com.github.thymeboots.dialect.ThymeBootsDialect()   );</strong></span>
+				<br><span >&nbsp;&nbsp;&nbsp;&nbsp;return templateEngine;</span>
+    			<br><span >&nbsp;}</span>
+    			<br><span >}</span>
+			</div>
+
+			<h2> ThymeBootsController</h2>
+			<p>You can see the showcase document at http://localhost:8080/thymeboots</p>	
+			<div class="highlight">
+				    <span>package com.github.thymeboots.app;</span> 			
+				<br><span > </span>				
+				<br><span >@org.springframework.stereotype.Controller</span>
+				<br><span >public class ThymeBootsController {</span>
+				<br><span >&nbsp;@org.springframework.web.bind.annotation.RequestMapping(value= "/thymeboots")</span>
+				<br><span >&nbsp;public String thymeboots(org.springframework.ui.Model model) {	</span>
+    			<br><span >&nbsp;&nbsp;&nbsp;&nbsp;return "thymeboots/index";</span>
+				<br><span >&nbsp;}</span>
+    			<br><span >}</span>
+			</div>
+    </div>
+</body>
+</html >

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html 	
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:tb="http://www.thymeleaf.org/bootstrap">
+<head>
+</head>
+<body>
+	<div th:fragment="column">
+		<h1><a class="btn-link" id="doclinkrow">Column</a></h1>		    			
+		<p>Break a new column</p>
+				    				
+		<p>The <code><</code>tb:column<code>></code> tag is a container you can put html code in. </p>
+
+		<h2 id="column_example">Example<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="#" href="#column_example" style="padding-left: 0.375em;"></a></h2>
+		<div class="bd-example">
+			<tb:container>
+				<tb:row>
+					<tb:column  class="border" style="background:gray;">1 of 2</tb:column>
+					<tb:column  class="border" style="background:gray;">2 of 2</tb:column >
+				</tb:row>
+			</tb:container >	
+		</div>
+		<div class="card-header">
+			<strong>Html markup </strong>
+			<div class="card-body" style="background-color: white;" >
+				<span> &nbsp;&nbsp;<code><</code>tb:container<code>></code>        </span> 
+
+				<br><span> &nbsp;&nbsp;&nbsp;&nbsp;<code><</code>tb:row<code>></code>        </span>
+				<br><span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>tb:column<code>></code>        </span>
+				<br><span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1 of 2       </span>				
+				<br><span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>/tb:column<code>></code>        </span>				
+				<br><span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>tb:column<code>></code>        </span>
+				<br><span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2 of 2       </span>				
+				<br><span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>/tb:column<code>></code>        </span>								
+				<br><span> &nbsp;&nbsp;&nbsp;&nbsp;<code><</code>/tb:row<code>></code>        </span>
+				
+				<br><span> &nbsp;&nbsp;<code><</code>/tb:container<code>></code>        </span>			
+
+			</div>			    							    				
+		</div>
+		
+			<h1>Mix and match</h1>
+ 			<tb:container>				
+				<tb:row>
+					<tb:column xs="12" md="8" class="border" style="background:gray;">
+					  	col-12  col-md-8
+					</tb:column>
+					<tb:column xs="6" md="4" class="border"  style="background:gray;">
+						col-6  col-md-4
+					</tb:column >
+				</tb:row>			
+				<tb:row>
+					<tb:column xs="6" md="4" class="border" style="background:gray;">
+					  	col-6  col-md-4
+					</tb:column>
+					<tb:column xs="6" md="4" class="border" style="background:gray;">
+					  	col-6  col-md-4
+					</tb:column>
+					<tb:column xs="6" md="4" class="border" style="background:gray;">
+					  	col-6  col-md-4
+					</tb:column>
+				</tb:row>	
+				<tb:row>
+					<tb:column xs="6" class="border" style="background:gray;">
+					  	col-6
+					</tb:column>
+					<tb:column xs="6" class="border" style="background:gray;">
+					  	col-6
+					</tb:column>
+				</tb:row>				
+			</tb:container >
+
+			<div class="highlight">				
+				<span> &nbsp;&nbsp;<code><</code>tb:container<code>></code>        </span> 
+				
+				<br><span> &nbsp;&nbsp;&nbsp;&nbsp;<code><</code>tb:row<code>></code>        </span>
+				<br><span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>tb:column xs="12" md="8" <code>></code>        </span>
+				<br><span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; col-12  col-md-8       </span>				
+				<br><span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>/tb:column<code>></code>        </span>				
+				<br><span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>tb:column xs="6" md="4"<code>></code>        </span>
+				<br><span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; col-6  col-md-4       </span>				
+				<br><span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>/tb:column<code>></code>        </span>				
+				<br><span> &nbsp;&nbsp;&nbsp;&nbsp;<code><</code>/tb:row<code>></code>        </span>
+				
+				<br><span> &nbsp;&nbsp;&nbsp;&nbsp;<code><</code>tb:row<code>></code>        </span>
+				<br><span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>tb:column xs="6" md="4" <code>></code>        </span>
+				<br><span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; col-6  col-md-4       </span>				
+				<br><span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>/tb:column<code>></code>        </span>				
+				<br><span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>tb:column xs="6" md="4" <code>></code>        </span>
+				<br><span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; col-6  col-md-4       </span>				
+				<br><span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>/tb:column<code>></code>        </span>				
+				<br><span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>tb:column xs="6" md="4" <code>></code>        </span>
+				<br><span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; col-6  col-md-4       </span>				
+				<br><span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>/tb:column<code>></code>        </span>				
+				
+				
+				<br><span> &nbsp;&nbsp;&nbsp;&nbsp;<code><</code>tb:row<code>></code>        </span>
+				<br><span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>tb:column xs="6"  <code>></code>        </span>
+				<br><span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; col-6        </span>				
+				<br><span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>/tb:column<code>></code>        </span>				
+				<br><span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>tb:column xs="6"<code>></code>        </span>
+				<br><span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; col-6       </span>				
+				<br><span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>/tb:column<code>></code>        </span>				
+				<br><span> &nbsp;&nbsp;&nbsp;&nbsp;<code><</code>/tb:row<code>></code>        </span>
+				
+				
+				<br><span> &nbsp;&nbsp;<code><</code>/tb:container<code>></code>        </span>			
+			</div>
+
+			<h1>wd atribute ( w-%): w-100 means breakline</h1>
+ 			<tb:container>				
+				<tb:row>
+					<tb:column class="border" style="background:gray;">col1</tb:column>
+					<tb:column class="border" style="background:gray;">col2</tb:column>
+					<tb:column wd="100"></tb:column>
+					<tb:column class="border" style="background:gray;">col3</tb:column>
+					<tb:column class="border" style="background:gray;">col4</tb:column>
+					
+				</tb:row>			
+			</tb:container >
+
+			<div class="highlight">				
+				<span> &nbsp;&nbsp;<code><</code>tb:container<code>></code>        </span> 				
+				<br><span> &nbsp;&nbsp;&nbsp;&nbsp;<code><</code>tb:row<code>></code>        </span>
+				<br><span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>tb:column<code>></code> col1 <code><</code>/tb:column<code>></code>       </span>				
+				<br><span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>tb:column<code>></code> col2<code><</code>/tb:column<code>></code>       </span>
+				<br><span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>tb:column wd="100"<code>></code><code><</code>/tb:column<code>></code>       </span>
+				<br><span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>tb:column<code>></code> col3 <code><</code>/tb:column<code>></code>       </span>
+				<br><span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>tb:column<code>></code> col4 <code><</code>/tb:column<code>></code>       </span>
+				<br><span> &nbsp;&nbsp;&nbsp;&nbsp;<code><</code>/tb:row<code>></code>        </span>
+				<br><span> &nbsp;&nbsp;<code><</code>/tb:container<code>></code>        </span>			
+			</div>
+		
+		<tb:card collapsible="true" header="Attributes">
+			<table class="table table-striped table-hover" style="background-color: #fff">
+	          <thead>
+	            <tr><th>Attribute</th>  <th>Default value</th>  <th>Description</th></tr>
+	          </thead>
+	          <tbody>
+	          	<tr><td>align</td> <td></td> <td>align-self value.  [start,center,end]</td></tr>
+	            <tr><td>span</td> <td></td> <td>.col-md</td></tr>
+	            <tr><td>xs</td>  <td></td>  <td>.col</td></tr>
+	            <tr><td>sm</td>  <td></td>  <td>.col-sm</td></tr>
+	            <tr><td>md</td>  <td></td>  <td>.col-md</td></tr>
+	            <tr><td>lg</td>  <td></td>  <td>.col-lg</td></tr>
+	            <tr><td>xl</td>  <td></td>  <td>.col-xl</td></tr>
+	            <tr><td>xxl</td> <td></td>  <td>.col-xxl</td></tr>	            
+	            <tr><td>wd</td>  <td></td>  <td>.w-(value) width value (1-100)%</td></tr>
+	          </tbody>
+			</table>
+		</tb:card>			    			
+    </div>
+</body>
+</html >

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html 	
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:tb="http://www.thymeleaf.org/bootstrap">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport"           content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="bootstrap/4.2.1/css/bootstrap.min.css"/>			
+	<link rel="stylesheet" type="text/css" href="bootsleaf/3.4.0/css/bootsleaf.css"/>
+	<script src="jquery/3.0.0/jquery.min.js"></script>
+	<script src="bootstrap/4.2.1/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+	<div th:fragment="buttongroup">
+		<h1><a class="btn-link" id="doclinkbuttongroup">ButtonGroup</a></h1>		    			
+				    				
+		<p>The <code><</code>tb:buttonGroup<code>></code> tag </p>
+
+		<h2 id="buttonGroup_example">Example<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="#" href="#buttonGroup_example" style="padding-left: 0.375em;"></a></h2>
+		<div class="bd-example">
+			<tb:row>
+	    		<tb:column>
+	    			<tb:buttonGroup>
+	    				<tb:button look="primary" value="1"></tb:button>
+	    				<tb:button look="primary" value="2"></tb:button>
+	    			</tb:buttonGroup>
+	    		</tb:column >
+			</tb:row>
+		</div>
+		<div class="card-header">
+			<strong>Html markup </strong>
+			<div class="card-body" style="background-color: white;" >
+				<table border="0" cellpadding="0" cellspacing="0">
+					<tbody>
+						<tr><td class="code"><code><</code>tb:buttonGroup<code>></code></td></tr>
+						<tr><td class="code">&nbsp;&nbsp;&nbsp; <code><</code>tb:button look="primary" value="1"<code>></code><code><</code>/tb:button<code>></code> </td></tr>
+						<tr><td class="code">&nbsp;&nbsp;&nbsp; <code><</code>tb:button look="primary" value="2"<code>></code><code><</code>/tb:button<code>></code> </td></tr>
+						<tr><td class="code"><code><</code>/tb:buttonGroup<code>></code></td></tr>
+					</tbody>
+				</table>			    				
+			</div>			    							    				
+		</div>
+		
+		<h2 id="buttonGroup_size">Size<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="#" href="#buttonGroup_size" style="padding-left: 0.375em;"></a></h2>
+		<div class="bd-example">
+			<tb:row>
+	    		<tb:column>
+	    			<tb:buttonGroup size="lg">
+	    				<tb:button look="primary" value="1"></tb:button>
+	    				<tb:button look="danger" value="2"></tb:button>
+	    			</tb:buttonGroup >
+	    		</tb:column >
+			</tb:row>
+		</div>
+		<div class="card-header">
+			<strong>Html markup </strong>
+			<div class="card-body" style="background-color: white;" >
+				<table border="0" cellpadding="0" cellspacing="0">
+					<tbody>
+						<tr><td class="code"><code><</code>tb:buttonGroup size="lg"<code>></code></td></tr>
+						<tr><td class="code">&nbsp;&nbsp;&nbsp; <code><</code>tb:button look="primary" value="1"<code>></code><code><</code>/tb:button<code>></code> </td></tr>
+						<tr><td class="code">&nbsp;&nbsp;&nbsp; <code><</code>tb:button look="danger" value="2"<code>></code><code><</code>/tb:button<code>></code> </td></tr>
+						<tr><td class="code"><code><</code>/tb:buttonGroup<code>></code></td></tr>
+					</tbody>
+				</table>			    				
+			</div>			    							    				
+		</div>
+		
+		<tb:card collapsible="true" header="Attributes">
+			<table class="table table-striped table-hover" style="background-color: #fff">
+	          <thead>
+	            <tr><th>Attribute</th>  <th>Default value</th>   <th>Description</th></tr>
+	          </thead>
+	          <tbody>
+	            <tr><td>size</td>       <td></td>                 <td>Button group size. can be lg, md, sm</td></tr>						          						            
+	          </tbody>
+			</table>
+		</tb:card>			    			
+	
+    </div>
+</body>
+</html >

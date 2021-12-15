@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html 	
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:tb="http://www.thymeleaf.org/bootstrap">
+<head>
+</head>
+<body>
+	<div th:fragment="formline">
+		<h1><a class="btn-link" id="doclinkforline">FormLine</a></h1>		    			
+		<p><code><</code>tb:formline<code>></code> component wrap  control components. </p> 
+		<p>This is a ThymeBoots container thats why thymeboots.css must be include</p> 
+		
+		<h2 id="formgroup_example">Example<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="#" href="#formgroup_example" style="padding-left: 0.375em;"></a></h2>
+		<div class="bd-example">
+			<form>
+				<tb:formline>
+					<label>Email address:</label>
+					<input type="email" class="form-control" placeholder="Enter email" >
+				</tb:formline>		
+				<tb:formline>
+				 	<label>Password:</label>
+				    <input type="password" class="form-control" placeholder="Enter password">				
+				</tb:formline>
+			</form>		
+		</div>
+		<div class="card-header">
+			<strong>Html markup </strong>
+			<div class="card-body" style="background-color: white;" >
+				<table border="0" cellpadding="0" cellspacing="0">
+					<tbody>
+						<tr><td class="code"><code><</code>form<code>></code></td></tr>
+						<tr><td class="code">&nbsp;&nbsp;<code><</code>tb:formline<code>></code></td></tr>
+						<tr><td class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>label <code>></code>Email address:<code><</code>/label<code>></code> </td></tr>
+						<tr><td class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>input type="email" class="form-control" placeholder="Enter email"<code>></code></td></tr>
+						<tr><td class="code">&nbsp;&nbsp;<code><</code>/tb:formline<code>></code></td></tr>
+
+						<tr><td class="code">&nbsp;&nbsp;<code><</code>tb:formline<code>></code></td></tr>
+						<tr><td class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>label <code>></code>Password:<code><</code>/label<code>></code> </td></tr>
+						<tr><td class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>input type="password" class="form-control" placeholder="Enter password"<code>></code></td></tr>
+						<tr><td class="code">&nbsp;&nbsp;<code><</code>/tb:formline<code>></code></td></tr>
+					</tbody>
+				</table>			    				
+			</div>			    							    				
+		</div>
+    </div>
+</body>
+</html >

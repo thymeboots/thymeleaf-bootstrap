@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html 	
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:tb="http://www.thymeleaf.org/bootstrap">
+<head>
+</head>
+<body>
+	<div th:fragment="layout">
+			<h1>Layout</h1>	
+			<p>Including wrapping containers, a powerful grid system</p>	
+			
+			<h2>Container</h2>	
+			<p>Containers are the most basic layout element in Bootstrap and are <strong>required when using the default grid system.</strong></p>
+			<p>While containers can be nested, most layouts do not require a nested container.</p>
+			<tb:container>
+				<div class="border" style="display: inline-block;width: 5rem;height: 5rem; background:gray;"></div>
+				<div class="border" style="display: inline-block;width: 5rem;height: 5rem;"></div>
+			</tb:container>	
+			<div class="highlight">				
+				<span> &nbsp;&nbsp;&nbsp;&nbsp;<code><</code>tb:container<code>></code>        </span> 
+				<br><span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...</span>
+				<br><span> &nbsp;&nbsp;&nbsp;&nbsp;<code><</code>/tb:container<code>></code>        </span>			
+			</div>	
+			<br>
+						    								    						
+			<h2>Container Fluid</h2>	
+			<tb:container fluid="true" class="border">
+				<div class="border" style="display: inline-block;width: 5rem;height: 5rem; background:gray;"></div>
+				<div class="border" style="display: inline-block;width: 5rem;height: 5rem;"></div>
+			</tb:container >	
+			<div class="highlight">				
+				<br><span> &nbsp;&nbsp;&nbsp;&nbsp;<code><</code>tb:container fluid="true"<code>></code>        </span> 
+				<br><span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...</span>
+				<br><span> &nbsp;&nbsp;&nbsp;&nbsp;<code><</code>/tb:container<code>></code>        </span>			
+			</div>	
+						    								    			
+
+
+    </div>
+</body>
+</html >

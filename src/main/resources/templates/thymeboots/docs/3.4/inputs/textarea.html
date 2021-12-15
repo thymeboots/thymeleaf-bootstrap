@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html 	
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:tb="http://www.thymeleaf.org/bootstrap">
+<head>
+</head>
+<body>
+	<div th:fragment="textarea">
+		<h1><a class="btn-link" id="doclinktextarea">Textarea</a></h1>		    			
+		The <code><</code>tb:textarea<code>></code> control component. Extends from Html textarea
+		
+		<h2 id="textarea_example">Example:<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="#" href="#textarea_example" style="padding-left: 0.375em;"></a></h2>
+		<div class="bd-example">
+			<tb:formgroup>
+				<tb:textarea label="Label"></tb:textarea>
+			</tb:formgroup>	
+		</div>
+		<div class="card-header">
+			<strong>Html markup </strong>
+			<div class="card-body" style="background-color: white;" >
+				<table border="0" cellpadding="0" cellspacing="0">
+					<tbody>
+						<tr><td class="code"><code><</code>tb:formgroup<code>></code></td></tr>
+						<tr><td class="code">&nbsp;&nbsp;<code><</code>tb:textarea label="Label" <code>></code><code><</code>/tb:textarea<code>></code></td></tr>
+						<tr><td class="code"><code><</code>/tb:formgroup<code>></code></td></tr>
+					</tbody>
+				</table>			    				
+			</div>			    							    				
+		</div>
+		<tb:card collapsible="true" header="Attributes">
+			<table class="table table-striped table-hover" style="background-color: #fff">
+	          <thead>
+	            <tr><th>Attribute</th>   <th>Default value</th>  <th>Description</th></tr>
+	          </thead>
+	          <tbody>
+	          	<tr><td>label</td>        <td></td>           <td>component label</td></tr>
+	          </tbody>
+			</table>
+		</tb:card>			    			
+
+    </div>
+</body>
+</html >
+
+

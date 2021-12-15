@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html 	
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:tb="http://www.thymeleaf.org/bootstrap">
+<head>
+</head>
+<body>
+	<div th:fragment="modal">
+		<h1><a class="btn-link" id="doclinkmodal">Modal</a></h1>		    			
+				    				
+		<p>The <code><</code>tb:modal<code>></code> tag </p>
+
+		<h2 id="modal_example">Example<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="#" href="#modal_example" style="padding-left: 0.375em;"></a></h2>
+		<div class="bd-example">
+    		<tb:row>
+    			<tb:column sm="" >
+    				<tb:buttonModal target="myModal1" look="primary" value="modal1 (Closable)"></tb:buttonModal>
+    				<tb:buttonModal target="myModal2" look="primary" value="modal2 (Not Closable)"></tb:buttonModal>
+    				<tb:buttonModal target="myModal3" look="primary" value="modal3 (Static)"></tb:buttonModal>
+    				<tb:buttonModal target="myModal4" look="primary" value="modal4 (Centered)"></tb:buttonModal>
+    				<tb:buttonModal target="myModal5" look="primary" value="modal5 (Footer)"></tb:buttonModal>
+    				<tb:buttonModal target="myModal6" look="primary" >modal6 (Footer2)</tb:buttonModal>						
+    			</tb:column>
+    		</tb:row>    		
+			<tb:row>
+    			<tb:column sm="" >
+					<tb:modal id="myModal1" header="Modal1" value="Content"></tb:modal>
+					<tb:modal id="myModal2" header="Modal2" value="Content" closable="false"></tb:modal>
+					<tb:modal id="myModal3" header="Modal3" value="Content" backdrop="false"></tb:modal>					
+					<tb:modal id="myModal4" header="Modal4" value="Content" centered="true" look="success"></tb:modal>
+					<tb:modal id="myModal5" header="Modal5" value="Content" footer="Footer" look="warning"></tb:modal>
+					<tb:modal id="myModal6" header="Modal6" look="primary"  scrollable="true"   draggable="true" resizable="true">
+					  Content	
+					  <tb:facet name="footer">
+					  	<tb:button      target="#"        look="primary" value="Save"></tb:button>
+					  	<tb:buttonModal target="myModal6" look="danger"  value="Close"></tb:buttonModal>
+					  </tb:facet>
+					  
+					  											  
+					</tb:modal>
+    			</tb:column>			
+			</tb:row>  
+		</div>
+		<div class="card-header">
+			<strong>Html markup </strong>
+			<div class="card-body" style="background-color: white;" >
+				<table border="0" cellpadding="0" cellspacing="0">
+					<tbody>
+						<tr><td class="code"> <code><</code>tb:buttonModal target="myModal1" look="primary" value="modal1 (Closable)" <code>></code><code><</code>/tb:buttonModal<code>></code> </td></tr>
+						<tr><td class="code"> <code><</code>tb:modal       id="myModal1" header="Modal1" value="Content" <code>></code><code><</code>/tb:modal<code>></code> </td></tr>
+						<tr><td class="code"> &nbsp;</td></tr>
+						<tr><td class="code"> <code><</code>tb:buttonModal target="myModal2" look="primary" value="modal2 (Not Closable)"<code>></code><code><</code>/tb:buttonModal<code>></code> </td></tr>
+						<tr><td class="code"> <code><</code>tb:modal       id="myModal2" header="Modal2" value="Content" closable="false"<code>></code><code><</code>/tb:modal<code>></code> </td></tr>
+						<tr><td class="code"> &nbsp;</td></tr>
+						<tr><td class="code"> <code><</code>tb:buttonModal target="myModal3" look="primary" value="modal3 (Static)"<code>></code><code><</code>/tb:buttonModal<code>></code> </td></tr>
+						<tr><td class="code"> <code><</code>tb:modal       id="myModal3" header="Modal3" value="Content" backdrop="false"<code>></code><code><</code>/tb:modal<code>></code> </td></tr>
+						<tr><td class="code"> &nbsp;</td></tr>
+						<tr><td class="code"> <code><</code>tb:buttonModal target="myModal4" look="primary" value="modal4 (Centered)"<code>></code><code><</code>/tb:buttonModal<code>></code> </td></tr>
+						<tr><td class="code"> <code><</code>tb:modal       id="myModal4" header="Modal4" value="Content" centered="true" look="success"  <code>></code><code><</code>/tb:modal<code>></code> </td></tr>
+						<tr><td class="code"> &nbsp;</td></tr>
+						<tr><td class="code"> <code><</code>tb:buttonModal target="myModal5" look="primary" value="modal5 (Footer)"<code>></code><code><</code>/tb:buttonModal<code>></code> </td></tr>
+						<tr><td class="code"> <code><</code>tb:modal       id="myModal5" header="Modal5" value="Content" footer="Footer" look="warning"<code>></code><code><</code>/tb:modal<code>></code> </td></tr>
+						<tr><td class="code"> &nbsp;</td></tr>
+						<tr><td class="code"> <code><</code>tb:buttonModal target="myModal6" look="primary" <code>></code>modal6 (Footer)<code><</code>/tb:buttonModal<code>></code> </td></tr>
+						<tr><td class="code"> <code><</code>tb:modal       id="myModal6" header="Modal6" look="primary" scrollable="true" <code>></code> </td></tr>
+						<tr><td class="code"> &nbsp;&nbsp;&nbsp;&nbsp;Content</td></tr>
+						<tr><td class="code"> &nbsp;&nbsp;&nbsp;&nbsp;<code><</code>tb:facet name="footer""<code>></code></td></tr>
+						<tr><td class="code"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>tb:button target="#" look="primary" value="Save" <code>></code><code><</code>/tb:button<code>></code> </td></tr>
+						<tr><td class="code"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>tb:buttonModal target="myModal6" look="danger" value="Close" <code>></code><code><</code>/tb:buttonModal<code>></code> </td></tr>
+						<tr><td class="code"> &nbsp;&nbsp;&nbsp;&nbsp;<code><</code>/tb:facet<code>></code></td></tr>
+						<tr><td class="code"> <code><</code>/tb:modal<code>></code></td></tr>
+					</tbody>
+				</table>			    				
+			</div>			    							    				
+		</div>
+		<tb:card collapsible="true" header="Attributes">
+			<table class="table table-striped table-hover" style="background-color: #fff">
+	          <thead>
+	            <tr><th>Attribute</th>   <th>Default value</th>   <th>Description</th></tr>
+	          </thead>
+	          <tbody>
+	          
+	          	<tr><td>backdrop</td>  <td>true</td>             <td>false:static modal</td></tr>
+	          	<tr><td>centered</td>  <td>false</td>            <td>true:modal will be centered</td></tr>						          	
+	          	<tr><td>closable</td>  <td>true</td>             <td>false:do not show close button on header</td></tr>
+	          	<tr><td>footer</td>    <td></td>                 <td>footer text</td></tr>
+	          	<tr><td>header</td>    <td></td>                 <td>header text</td></tr>
+	            <tr><td>id</td>        <td></td>                 <td>modal id</td></tr>
+	            <tr><td>look</td>      <td>secondary</td>        <td>modal header look type. can be success, secondary,warning, danger, primary, dark, info etc</td></tr>
+	            <tr><td>scrollable</td><td>false</td>            <td>true:modal content scrollable</td></tr>						            						            						          						            
+	          </tbody>
+			</table>
+		</tb:card>			    			
+	
+    </div>
+</body>
+</html >

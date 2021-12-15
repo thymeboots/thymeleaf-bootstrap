@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html 	
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:tb="http://www.thymeleaf.org/bootstrap">
+<head>
+</head>
+<body>
+	<div th:fragment="button">
+		<h1><a class="btn-link" id="doclinkbutton">Button</a></h1>		    			
+				    				
+		<p>The <code><</code>tb:button<code>></code> tag</p>
+
+		<h2 id="button_example">Example<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="#" href="#button_example" style="padding-left: 0.375em;"></a></h2>
+		<p>Bootstrap includes several predefined button styles, each serving its own semantic purpose, with a few extras thrown in for more control.</p>
+		<div class="bd-example">								  
+			<tb:button look="primary">Primary</tb:button>  
+			<tb:button look="secondary">Secondary</tb:button>
+			<tb:button look="success">Success</tb:button>						     			   
+			<tb:button look="danger">Danger</tb:button>
+			<tb:button look="warning">Warning</tb:button>
+			<tb:button look="info">Info</tb:button>
+			<tb:button look="light">Light</tb:button>
+			<tb:button look="dark">Dark</tb:button>
+			<tb:button look="link">Link</tb:button>
+		</div>		    				
+		<div class="card-header">
+			<strong>Html markup </strong>
+			<div class="card-body" style="background-color: white;" >
+				<table border="0" cellpadding="0" cellspacing="0">
+					<tbody>
+						<tr><td class="code"> <code><</code>tb:button look="primary"<code>></code>Primary<code><</code>/tb:button<code>></code> </td></tr>
+						<tr><td class="code"> <code><</code>tb:button look="secondary"<code>></code>Secondary<code><</code>/tb:button<code>></code> </td></tr>
+						<tr><td class="code"> <code><</code>tb:button look="danger"<code>></code>Danger<code><</code>/tb:button<code>></code> </td></tr>
+						<tr><td class="code"> <code><</code>tb:button look="warning"<code>></code>Warning<code><</code>/tb:button<code>></code> </td></tr>
+						<tr><td class="code"> <code><</code>tb:button look="info"<code>></code>Info<code><</code>/tb:button<code>></code> </td></tr>
+						<tr><td class="code"> <code><</code>tb:button look="light"<code>></code>Light<code><</code>/tb:button<code>></code> </td></tr>
+						<tr><td class="code"> <code><</code>tb:button look="dark"<code>></code>Dark<code><</code>/tb:button<code>></code> </td></tr>
+						<tr><td class="code"> <code><</code>tb:button look="link"<code>></code>Link<code><</code>/tb:button<code>></code> </td></tr>
+					</tbody>
+				</table>			    				
+			</div>			    							    				
+		</div>
+		
+		
+		<h2 id="button_outline">Outline buttons<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="#" href="#button_outline" style="padding-left: 0.375em;"></a></h2>
+		<div class="bd-example">								  
+			<tb:button look="outline-primary">Primary</tb:button>  
+			<tb:button look="outline-secondary">Secondary</tb:button>
+			<tb:button look="outline-success">Success</tb:button>						     			   
+		</div>		    				
+		<div class="card-header">
+			<strong>Html markup </strong>
+			<div class="card-body" style="background-color: white;" >
+				<table border="0" cellpadding="0" cellspacing="0">
+					<tbody>
+						<tr><td class="code"> <code><</code>tb:button look="outline-primary"<code>></code>Outline Primary<code><</code>/tb:button<code>></code> </td></tr>
+						<tr><td class="code"> <code><</code>tb:button look="outline-secondary"<code>></code>Outline Secondary<code><</code>/tb:button<code>></code> </td></tr>
+						<tr><td class="code"> <code><</code>tb:button look="outline-success"<code>></code>Outline Succes<code><</code>/tb:button<code>></code> </td></tr>
+					</tbody>
+				</table>			    				
+			</div>			    							    				
+		</div>
+		
+		<h2 id="button_outline">Sizes<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="#" href="#button_outline" style="padding-left: 0.375em;"></a></h2>
+		<div class="bd-example">								  
+			<tb:button look="primary"   size="lg" value="Large"></tb:button>  
+			<tb:button look="primary"   size="md">Medium</tb:button>
+			<tb:button look="primary"   size="sm" icon="save"> Small</tb:button>						     			   
+		</div>		    				
+		<div class="card-header">
+			<strong>Html markup </strong>
+			<div class="card-body" style="background-color: white;" >
+				<table border="0" cellpadding="0" cellspacing="0">
+					<tbody>
+						<tr><td class="code"> <code><</code>tb:button look="primary" size="lg" value="Large"<code>></code><code><</code>/tb:button<code>></code> </td></tr>
+						<tr><td class="code"> <code><</code>tb:button look="primary" size="md" value="Medium"<code>></code><code><</code>/tb:button<code>></code> </td></tr>
+						<tr><td class="code"> <code><</code>tb:button look="primary" size="sm" icon="save"<code>></code> Small<code><</code>/tb:button<code>></code> </td></tr>
+					</tbody>
+				</table>			    				
+			</div>			    							    				
+		</div>
+					    			
+		<tb:card collapsible="true" header="Attributes">
+			<table class="table table-striped table-hover" style="background-color: #fff">
+	          <thead>
+	            <tr><th>Attribute</th>   <th>Default value</th>  <th>Description</th></tr>
+	          </thead>
+	          <tbody>
+	          	<tr><td>icon</td>         <td></td>           <td>Font Awesome Icon Name</td></tr>
+	            <tr><td>look</td>         <td>secondary</td>  <td>Look of the Button, can be warning , primary , secondary, info , success ,  danger , error, dark , light.<br/>For outline add "outline-" prefix. outline-primary etc.</td></tr>	
+	            <tr><td>size</td>         <td></td>           <td>can be lg, md, sm</td></tr>
+	            <tr><td>value</td>        <td></td>           <td>Button label value</td></tr>						            
+	          </tbody>
+			</table>
+		</tb:card>			    			
+
+    </div>
+</body>
+</html >
