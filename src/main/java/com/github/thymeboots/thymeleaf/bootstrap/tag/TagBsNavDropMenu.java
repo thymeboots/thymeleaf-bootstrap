@@ -29,21 +29,21 @@ import org.thymeleaf.model.IModelFactory;
 import org.thymeleaf.templatemode.TemplateMode;
 
 /**
- * <p>Represents an bootstrap <code>buttonDrop</code> element
+ * <p>Represents an bootstrap <code>dropMenu</code> element
  * <p><strong>Attributes</strong> <br>
  * <strong>look       </strong> styles look attribute: [link, outline-primary,primary , info , success , warning , danger ] <br>
  * <strong>size     </strong> item size: [sm,md,lg] <br>
  * 
  * <p><strong>Examples</strong> <br/> 
- * &lt;tb:buttonDrop look="link" size="sm" value="drop label" &gt; <br>
- * &nbsp;&nbsp;&nbsp;&lt;tb:navLink type="link" href="#" value="Drop Link1"&gt;&lt;/tb:navLink&gt; <br>
- * &nbsp;&nbsp;&nbsp;&lt;tb:navLink type="link" href="#" value="Drop Link2"&gt;&lt;/tb:navLink&gt; <br>
- * &lt;/tb:buttonDrop&gt;<br>
+ * &lt;tb:dropMenu look="link" size="sm" value="drop label" &gt; <br>
+ * &nbsp;&nbsp;&nbsp;&lt;tb:navLink type="dropitem" href="#" value="Drop Link1"&gt;&lt;/tb:navLink&gt; <br>
+ * &nbsp;&nbsp;&nbsp;&lt;tb:navLink type="dropitem" href="#" value="Drop Link2"&gt;&lt;/tb:navLink&gt; <br>
+ * &lt;/tb:dropMenu&gt;<br>
 
- * &lt;tb:buttonDrop look="primary" size="sm" value="drop label" &gt; <br>
+ * &lt;tb:dropMenu look="primary" size="sm" value="drop label" &gt; <br>
  * &nbsp;&nbsp;&nbsp;&lt;tb:navLink href="#" value="Drop Item1"&gt;&lt;/tb:navLink&gt; <br>
  * &nbsp;&nbsp;&nbsp;&lt;tb:navLink href="#" value="Drop Item2"&gt;&lt;/tb:navLink&gt; <br>
- * &lt;/tb:buttonDrop&gt;
+ * &lt;/tb:dropMenu&gt;
  *
  * @author Rifat Yilmaz
  *
@@ -51,10 +51,10 @@ import org.thymeleaf.templatemode.TemplateMode;
  *
 
  */
-public class TagBsButtonDrop extends com.github.thymeboots.thymeleaf.bootstrap.comp.UIOutput {
-	private static final String TAG_NAME       = "buttonDrop";
+public class TagBsNavDropMenu extends com.github.thymeboots.thymeleaf.bootstrap.comp.UIOutput {
+	private static final String TAG_NAME       = "dropMenu";
 	private static final String TAG_HTML       = "div";
-	private static final String TAG_BOOTSCLASS = "btn-group";
+	private static final String TAG_BOOTSCLASS = "nav-item dropdown";
 	private static final int    PRECEDENCE = 1000;
 	
 	protected enum PropertyKeys {
@@ -69,7 +69,7 @@ public class TagBsButtonDrop extends com.github.thymeboots.thymeleaf.bootstrap.c
            return ((toString != null) ? toString : super.toString());
        }			
 	}	
-    public TagBsButtonDrop(final String dialectPrefix, String    tagVersion) {
+    public TagBsNavDropMenu(final String dialectPrefix, String    tagVersion) {
         super(tagVersion,TemplateMode.HTML, dialectPrefix, TAG_NAME, true, null, false, PRECEDENCE);
     }
     
@@ -103,23 +103,12 @@ public class TagBsButtonDrop extends com.github.thymeboots.thymeleaf.bootstrap.c
     @Override
 	public void encodeBegin(ITemplateContext context, IModel model, Map<String,String> attributes )  {		
     	super.encodeBegin(context, model, attributes);
-    	
-    	String look=this.nvl(this.getLook(), "");
-    	String size=this.nvl(this.getSize(), "");
-    	
+    	    	
     	IModelFactory modelFactory = context.getModelFactory();		
-	    //String caretStr=" <span class=\"caret\"></span>";	    
     	String caretStr="";
-	    String buttonLook="btn";	    
-	    if (!look.isBlank()) {
-	    	buttonLook="btn btn-"+this.getLook();
-	    }
-	    if (!size.isBlank()) {
-	    	buttonLook=buttonLook+" "+"btn-"+size;
-	    }
-	    
+	    String buttonLook=" nav-link ";	    	    
 	    String buttonValue= this.nvl(this.getValue()," ");
-	    String buttonStr="\n<button type=\"button\" class=\""+buttonLook+" dropdown-toggle\" data-toggle=\"dropdown\">"+buttonValue+caretStr+"</button>";
+	    String buttonStr="\n<a  class=\""+buttonLook+" dropdown-toggle\" data-toggle=\"dropdown\">"+buttonValue+caretStr+"</a>";
 	    
 	    model.add(modelFactory.createText(buttonStr) );	
 	    

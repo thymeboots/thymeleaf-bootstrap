@@ -40,6 +40,10 @@ import org.thymeleaf.templatemode.TemplateMode;
  * &lt;tb:icon type="fa" value="info-circle" spin="true" &gt;  &lt;tb:/icon&gt; <br>
  * &lt;tb:icon type="glyphicon" value="ok-sign" &gt;  &lt;tb:/icon&gt; <br>
  * 
+ * @author Rifat Yilmaz
+ *
+ * @since 3.4.0
+ *
  */
 
 public class TagBsIcon extends com.github.thymeboots.thymeleaf.bootstrap.comp.UIOutput {

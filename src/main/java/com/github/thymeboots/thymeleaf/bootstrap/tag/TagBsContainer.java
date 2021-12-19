@@ -31,6 +31,10 @@ import org.thymeleaf.templatemode.TemplateMode;
  * <p><strong>Examples</strong> <br> 
  * &lt;tb:container fluid="true" breakpoint="md" &gt;  &lt;tb:/container&gt;
  * 
+ * @author Rifat Yilmaz
+ *
+ * @since 3.4.0
+ *
  */
 
 public class TagBsContainer extends com.github.thymeboots.thymeleaf.bootstrap.comp.UIOutput {

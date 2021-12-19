@@ -36,6 +36,10 @@ import org.thymeleaf.templatemode.TemplateMode;
  * &lt;tb:badge value="12" look="primary" &gt;  &lt;/tb:badge&gt; <br>
  * &lt;tb:badge value="12" look="secondary" &gt;  &lt;/tb:badge&gt; <br>
  * 
+ * @author Rifat Yilmaz
+ *
+ * @since 3.4.0
+ *
  */
 public class TagBsBadge extends com.github.thymeboots.thymeleaf.bootstrap.comp.UIOutput {
 	private static final String TAG_NAME       = "badge";

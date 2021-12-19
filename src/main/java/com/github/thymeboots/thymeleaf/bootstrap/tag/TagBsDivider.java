@@ -1,3 +1,4 @@
+
 /*
  * =============================================================================
  *
@@ -20,54 +21,44 @@
 
 package com.github.thymeboots.thymeleaf.bootstrap.tag;
 
-
-import java.util.Map;
-
-import org.thymeleaf.context.ITemplateContext;
-import org.thymeleaf.model.IModel;
 import org.thymeleaf.templatemode.TemplateMode;
 
 /**
- * <p>Represents an bootstrap <code>formgroup</code> element
+ * <p>Represents an bootstrap <code>divider</code> element
+ * <p><strong>Attributes</strong> <br>
+ * 
  * <p><strong>Examples</strong> <br> 
- * &lt;tb:formgroup&gt;&lt;tb:/formgroup&gt;
+ * &lt;tb:divider&gt;  &lt;tb:/divider&gt;
  * 
  * @author Rifat Yilmaz
  *
  * @since 3.4.0
  *
  */
-public class TagBsFormgroup extends com.github.thymeboots.thymeleaf.bootstrap.comp.UIOutput {
-	private static final String TAG_NAME       = "formgroup";
+public class TagBsDivider extends TagBsInput  {
+	private static final String TAG_NAME       = "divider";
 	private static final String TAG_HTML       = "div";
-	private static final String TAG_BOOTSCLASS = "form-group";
+	private static final String TAG_BOOTSCLASS = "dropdown-divider";
 	private static final int    PRECEDENCE = 1000;
-	
-	
-    public TagBsFormgroup(final String dialectPrefix, String    tagVersion) {
+		
+    public TagBsDivider(final String dialectPrefix, String    tagVersion) {
         super(tagVersion,TemplateMode.HTML, dialectPrefix, TAG_NAME, true, null, false, PRECEDENCE);
-    }        
-    
-    @Override
-    public String getHtmlTagStyleClass() {
-    	return TAG_BOOTSCLASS;
-    }    
+    }
+	 
     @Override
     public String getHtmlTag() {
     	return TAG_HTML;
-    }     
+    }         
+    @Override
+    public String getHtmlTagStyleClass() {
+    	String ret=TAG_BOOTSCLASS;    
+    	return ret;
+    }    
+    @Override
+    public String getType() {
+    	return null;
+    }      
     
-    @Override
-	public void encodeBegin(ITemplateContext context, IModel model, Map<String,String> attributes )  {		
-	   super.encodeBegin(context, model, attributes);
-	}	
-    @Override
-    public void encodeChildren(ITemplateContext context, IModel model,  Map<String,String> attributes)  {
-    	super.encodeChildren(context, model, attributes);  	
-    }
-    @Override
-    public void encodeEnd(ITemplateContext context, IModel model,  Map<String,String> attributes)  {
-    	super.encodeEnd(context, model, attributes);
-    }
     
+
 }

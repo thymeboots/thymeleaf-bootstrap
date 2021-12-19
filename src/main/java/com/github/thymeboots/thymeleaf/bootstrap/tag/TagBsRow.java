@@ -31,6 +31,10 @@ import org.thymeleaf.templatemode.TemplateMode;
  * <p><strong>Examples</strong> <br> 
  * &lt;tb:row align="center" justify="start" &gt;  &lt;tb:/row&gt;
  * 
+ * @author Rifat Yilmaz
+ *
+ * @since 3.4.0
+ *
  */
 public class TagBsRow extends com.github.thymeboots.thymeleaf.bootstrap.comp.UIOutput {
 	private static final String TAG_NAME       = "row";

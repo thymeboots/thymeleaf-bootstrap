@@ -23,35 +23,35 @@ package com.github.thymeboots.thymeleaf.bootstrap.tag;
 import org.thymeleaf.templatemode.TemplateMode;
 
 /**
- * <p>Represents an bootstrap <code>carouselCaption</code> element
- *  
+ * <p>Represents an bootstrap <code>jumbotron</code> element
+ * 
  * <p><strong>Attributes</strong> <br>
- *  
  * <p><strong>Examples</strong> <br> 
- * &lt;tb:carouselCaption&gt;&lt;tb:/carouselCaption&gt;
+ * &lt;tb:jumbotron&gt;&lt;/tb:jumbotron&gt;
  *  
  * @author Rifat Yilmaz
  *
  * @since 3.4.0
- *
+ *  
  */
-public class TagBsCarouselCaption extends com.github.thymeboots.thymeleaf.bootstrap.comp.UIOutput {
-	private static final String TAG_NAME       = "carouselCaption";
-	private static final String TAG_HTML       = "div";
-	private static final String TAG_BOOTSCLASS = "carousel-caption";
+public class TagBsJumbotron extends com.github.thymeboots.thymeleaf.bootstrap.comp.UIOutput {
+	private static final String TAG_NAME       = "jumbotron";
+	private static final String TAG_BOOTSCLASS = "jumbotron";
 	private static final int    PRECEDENCE = 1000;
 	
-    public TagBsCarouselCaption(final String dialectPrefix, String    tagVersion) {
+    public TagBsJumbotron(final String dialectPrefix, String    tagVersion) {
         super(tagVersion,TemplateMode.HTML, dialectPrefix, TAG_NAME, true, null, false, PRECEDENCE);
     }
     
+    /*
+<img data-container="body" draggable="true" data-original-title="Ain't he a beauty?">   
+     */
+
+    
     @Override
     public String getHtmlTagStyleClass() {
-    	return TAG_BOOTSCLASS;    	    	
-    }    
-    @Override
-    public String getHtmlTag() {
-    	return TAG_HTML;
-    }     
+    	return TAG_BOOTSCLASS;    	
+    }
+    
     
 }

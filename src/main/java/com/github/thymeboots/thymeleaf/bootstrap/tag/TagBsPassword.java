@@ -24,6 +24,18 @@ import java.util.Map;
 
 import org.thymeleaf.templatemode.TemplateMode;
 
+/**
+ * <p>
+ *   Represents an bootstrap <code>password</code> control element.<br>
+ *   Extend from tb:input component and default type="password"
+ * <p><strong>Examples</strong> <br> 
+ * &lt;tb:password&gt;&lt;tb:/password&gt;
+ * 
+ * @author Rifat Yilmaz
+ *
+ * @since 3.4.0
+ *
+ */
 public class TagBsPassword extends TagBsInput  {
 	private static final String TAG_NAME       = "password";
 	private static final String INPUT_TYPE     = "password";

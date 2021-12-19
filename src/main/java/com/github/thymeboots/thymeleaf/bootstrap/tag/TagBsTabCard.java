@@ -41,6 +41,10 @@ import com.github.thymeboots.thymeleaf.bootstrap.comp.FacetNamesEnum;
  * <p><strong>Examples</strong> <br> 
  * &lt;tb:tab header="tab header" &gt;&lt;tb:/tab&gt;
  *  
+ * @author Rifat Yilmaz
+ *
+ * @since 3.4.0
+ *
  */
 public class TagBsTabCard extends com.github.thymeboots.thymeleaf.bootstrap.comp.UIOutput {
 	private static final String TAG_NAME_CARD  = "card";

@@ -76,6 +76,7 @@ public class BootstrapDialect extends AbstractProcessorDialect {
         processors.add(new com.github.thymeboots.thymeleaf.bootstrap.tag.TagBsCollapse(       dialectPrefix, BOOTSTRAP_VERSION));
         processors.add(new com.github.thymeboots.thymeleaf.bootstrap.tag.TagBsColumn(         dialectPrefix, BOOTSTRAP_VERSION));
         processors.add(new com.github.thymeboots.thymeleaf.bootstrap.tag.TagBsContainer(      dialectPrefix, BOOTSTRAP_VERSION));
+        processors.add(new com.github.thymeboots.thymeleaf.bootstrap.tag.TagBsDivider(        dialectPrefix, BOOTSTRAP_VERSION));
         processors.add(new com.github.thymeboots.thymeleaf.bootstrap.tag.TagBsFacet(          dialectPrefix, BOOTSTRAP_VERSION));
         processors.add(new com.github.thymeboots.thymeleaf.bootstrap.tag.TagBsFormfloat(      dialectPrefix, BOOTSTRAP_VERSION));
         processors.add(new com.github.thymeboots.thymeleaf.bootstrap.tag.TagBsFormgroup(      dialectPrefix, BOOTSTRAP_VERSION));
@@ -84,18 +85,25 @@ public class BootstrapDialect extends AbstractProcessorDialect {
         processors.add(new com.github.thymeboots.thymeleaf.bootstrap.tag.TagBsIcon(           dialectPrefix, BOOTSTRAP_VERSION));
         processors.add(new com.github.thymeboots.thymeleaf.bootstrap.tag.TagBsImg(            dialectPrefix, BOOTSTRAP_VERSION));        
         processors.add(new com.github.thymeboots.thymeleaf.bootstrap.tag.TagBsInputgroup(     dialectPrefix, BOOTSTRAP_VERSION));
+        processors.add(new com.github.thymeboots.thymeleaf.bootstrap.tag.TagBsJumbotron(     dialectPrefix, BOOTSTRAP_VERSION));
+                
         processors.add(new com.github.thymeboots.thymeleaf.bootstrap.tag.TagBsLabel(          dialectPrefix, BOOTSTRAP_VERSION));
         processors.add(new com.github.thymeboots.thymeleaf.bootstrap.tag.TagBsModal(          dialectPrefix, BOOTSTRAP_VERSION));
+        processors.add(new com.github.thymeboots.thymeleaf.bootstrap.tag.TagBsNavbar(         dialectPrefix, BOOTSTRAP_VERSION));        
+        processors.add(new com.github.thymeboots.thymeleaf.bootstrap.tag.TagBsNavbarList(     dialectPrefix, BOOTSTRAP_VERSION));
+        processors.add(new com.github.thymeboots.thymeleaf.bootstrap.tag.TagBsNavDropItem(    dialectPrefix, BOOTSTRAP_VERSION));
+        processors.add(new com.github.thymeboots.thymeleaf.bootstrap.tag.TagBsNavDropMenu(    dialectPrefix, BOOTSTRAP_VERSION));
         processors.add(new com.github.thymeboots.thymeleaf.bootstrap.tag.TagBsNavLink(        dialectPrefix, BOOTSTRAP_VERSION)); 
-        processors.add(new com.github.thymeboots.thymeleaf.bootstrap.tag.TagBsNavList(        dialectPrefix, BOOTSTRAP_VERSION));        
-        processors.add(new com.github.thymeboots.thymeleaf.bootstrap.tag.TagBsPassword(       dialectPrefix, BOOTSTRAP_VERSION));
+        processors.add(new com.github.thymeboots.thymeleaf.bootstrap.tag.TagBsNavList(        dialectPrefix, BOOTSTRAP_VERSION));
+        processors.add(new com.github.thymeboots.thymeleaf.bootstrap.tag.TagBsProgress(       dialectPrefix, BOOTSTRAP_VERSION));
         processors.add(new com.github.thymeboots.thymeleaf.bootstrap.tag.TagBsRow(            dialectPrefix, BOOTSTRAP_VERSION));
         processors.add(new com.github.thymeboots.thymeleaf.bootstrap.tag.TagBsSpinner(        dialectPrefix, BOOTSTRAP_VERSION));
         processors.add(new com.github.thymeboots.thymeleaf.bootstrap.tag.TagBsTab(            dialectPrefix, BOOTSTRAP_VERSION));
         processors.add(new com.github.thymeboots.thymeleaf.bootstrap.tag.TagBsTabView(        dialectPrefix, BOOTSTRAP_VERSION));
         
         processors.add(new com.github.thymeboots.thymeleaf.bootstrap.tag.TagBsInput(          dialectPrefix, BOOTSTRAP_VERSION));
-        processors.add(new com.github.thymeboots.thymeleaf.bootstrap.tag.TagBsSelect(        dialectPrefix, BOOTSTRAP_VERSION));
+        processors.add(new com.github.thymeboots.thymeleaf.bootstrap.tag.TagBsPassword(       dialectPrefix, BOOTSTRAP_VERSION));
+        processors.add(new com.github.thymeboots.thymeleaf.bootstrap.tag.TagBsSelect(         dialectPrefix, BOOTSTRAP_VERSION));
         processors.add(new com.github.thymeboots.thymeleaf.bootstrap.tag.TagBsTextarea(       dialectPrefix, BOOTSTRAP_VERSION));
                         
         return processors;

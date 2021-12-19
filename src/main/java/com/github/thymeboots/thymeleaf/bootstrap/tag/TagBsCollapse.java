@@ -38,6 +38,10 @@ import org.thymeleaf.templatemode.TemplateMode;
  * &lt;tb:collapse header="press me to see" look="primary" &gt; Collapsed text  &lt;tb:/collapse&gt; <br>
  * &lt;tb:collapse header="press me to see" look="info"    &gt; Collapsed text  &lt;tb:/collapse&gt; <br> 
  * 
+ * @author Rifat Yilmaz
+ *
+ * @since 3.4.0
+ *
  */
 public class TagBsCollapse extends com.github.thymeboots.thymeleaf.bootstrap.comp.UIOutput {
 	private static final String TAG_NAME       = "collapse";

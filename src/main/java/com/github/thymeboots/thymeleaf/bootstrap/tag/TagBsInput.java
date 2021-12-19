@@ -36,6 +36,10 @@ import com.github.thymeboots.thymeleaf.bootstrap.comp.FacetNamesEnum;
  * <p><strong>Examples</strong> <br> 
  * &lt;tb:input&gt;&lt;tb:/input&gt;
  * 
+ * @author Rifat Yilmaz
+ *
+ * @since 3.4.0
+ *
  */
 public class TagBsInput extends com.github.thymeboots.thymeleaf.bootstrap.comp.UIInput {
 	private static final String TAG_NAME       = "input";
@@ -108,6 +112,15 @@ public class TagBsInput extends com.github.thymeboots.thymeleaf.bootstrap.comp.U
     	return ret;
     }      
     
+    public String sizeClass() {
+    	String ret="";
+    	String size=this.nvl( this.getSize(),"" );
+    	if (!this.isNumber(size) ) {
+   			ret=TAG_BOOTSCLASS+"-"+size;
+    	}    	
+    	return ret;
+    }      
+    
     
     @Override
     public String getHtmlTagStyleClass() {
@@ -117,6 +130,9 @@ public class TagBsInput extends com.github.thymeboots.thymeleaf.bootstrap.comp.U
     	) {
     		ret=ret+" "+"custom-range";
     	}
+    	
+    	ret=(ret+" "+sizeClass()).trim();
+    	
     	return ret;
     }    
     @Override

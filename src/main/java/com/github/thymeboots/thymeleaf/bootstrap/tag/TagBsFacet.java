@@ -34,6 +34,11 @@ import org.thymeleaf.templatemode.TemplateMode;
  * &nbsp;&nbsp;&nbsp;&lt;tb:icon value="info-circle" &gt;&lt;tb:/icon&gt;<br>
  * &nbsp;&nbsp;&nbsp;Header Text<br>
  * &lt;tb:/facet&gt;
+ * 
+ * @author Rifat Yilmaz
+ *
+ * @since 3.4.0
+ *
  */
 public class TagBsFacet extends com.github.thymeboots.thymeleaf.bootstrap.comp.UIOutput {
 	private static final String TAG_NAME       = "facet";

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html 	
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:tb="http://www.thymeleaf.org/bootstrap">
+<head>
+</head>
+<body>
+	<div th:fragment="progress">
+		<h1><a class="btn-link" id="doclinkprogress">Progress</a></h1>		    			
+				    				
+		<p>The <code><</code>tb:progress<code>></code> tag </p>
+
+		<h2 id="progress_example">Example<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="#" href="#progress_example" style="padding-left: 0.375em;"></a></h2>
+		<div>
+			<tb:progress value="0" ></tb:progress>  <br>
+			<tb:progress value="20"></tb:progress> <br>
+			<tb:progress value="30"  look="success"></tb:progress> <br>
+			<tb:progress value="40"  look="info"></tb:progress> <br>
+			<tb:progress value="50"  look="warning" ></tb:progress> <br>
+			<tb:progress value="60"  look="danger"  label="%60 Completed"></tb:progress> <br>
+			<tb:progress value="70"  look="warning"  striped="true" ></tb:progress> <br>
+			<tb:progress value="90"  min="0" max="100" look="warning" animated="true" ></tb:progress> <br>
+			<tb:progress value="100" min="0" max="100" look="warning" animated="true" label-show="false" tooltip="Tool tip text"></tb:progress> <br>			
+		</div>
+		<div class="card-header">
+			<strong>Html markup </strong>
+			<div class="card-body" style="background-color: white;" >
+				<table border="0" cellpadding="0" cellspacing="0">
+					<tbody>
+						<tr><td class="code"> <code><</code>tb:progress value="0"<code>></code><code><</code>/tb:progress<code>></code> </td></tr>
+						<tr><td class="code"> <code><</code>tb:progress value="20"<code>></code><code><</code>/tb:progress<code>></code> </td></tr>
+						<tr><td class="code"> <code><</code>tb:progress value="30"  look="success"<code>></code><code><</code>/tb:progress<code>></code> </td></tr>
+						<tr><td class="code"> <code><</code>tb:progress value="40"  look="info"<code>></code><code><</code>/tb:progress<code>></code> </td></tr>
+						<tr><td class="code"> <code><</code>tb:progress value="50"  look="warning"<code>></code><code><</code>/tb:progress<code>></code> </td></tr>
+						<tr><td class="code"> <code><</code>tb:progress value="60"  look="danger"  label="%60 Completed"<code>></code><code><</code>/tb:progress<code>></code> </td></tr>
+						<tr><td class="code"> <code><</code>tb:progress value="70"  look="warning" striped="true"<code>></code><code><</code>/tb:progress<code>></code> </td></tr>
+						<tr><td class="code"> <code><</code>tb:progress value="90"  min="0" max="100" look="warning" animated="true"<code>></code><code><</code>/tb:progress<code>></code> </td></tr>
+						<tr><td class="code"> <code><</code>tb:progress value="100" min="0" max="100" look="warning" animated="true" label-show="false" tooltip="Tool tip text"<code>></code><code><</code>/tb:progress<code>></code> </td></tr>
+
+					</tbody>
+				</table>			    				
+			</div>			    							    				
+		</div>
+		<tb:card collapsible="true" header="Attributes">
+			<table class="table table-striped table-hover" style="background-color: #fff">
+	          <thead>
+	            <tr><th>Attribute</th>  <th>Default value</th> <th>Description</th></tr>
+	          </thead>
+	          <tbody>
+	          	<tr><td>animated</td>         <td>false</td>    <td>true:start animation</td></tr>
+	          	<tr><td>striped</td>          <td>false</td>    <td>true:enable striped</td></tr>
+	            <tr><td>look</td>             <td>primary</td>  <td>Look of the progress, can be  primary , warning, secondary, info , success ,  danger , error, dark , light.</td></tr>
+	            <tr><td>label</td>            <td></td>         <td>label which will be displayed
+	            <tr><td>label-show</td>       <td>true</td>     <td>true:show percentage as label false:dont show</td></tr>	            						          						            
+	            <tr><td>min</td>              <td>0</td>        <td>minumum value </td></tr>
+	            <tr><td>max</td>              <td>0</td>        <td>maximum value </td></tr>
+	            <tr><td>rendered</td>         <td>true</td>     <td>true:render false: do not render </td></tr>
+	            <tr><td>tooltip</td>          <td>true</td>     <td>The  text of tooltip </td></tr>	
+	            <tr><td>tooltip-position</td> <td>auto</td>     <td>where is the tooltip to be displayed? can be: top,bottom,right,left,auto </td></tr>
+	            <tr><td>value</td>            <td>0</td>        <td>value now</td></tr>            	            
+	          </tbody>
+			</table>
+		</tb:card>			    			
+
+    </div>
+</body>
+</html >

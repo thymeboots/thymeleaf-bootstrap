@@ -34,6 +34,10 @@ import org.thymeleaf.templatemode.TemplateMode;
  * <p><strong>Examples</strong> <br> 
  * &lt;tb:buttonModal look="primary" size="sm" value="open model" target="modalId&gt;  &lt;/tb:buttonModal&gt;<br> 
  * 
+ * @author Rifat Yilmaz
+ *
+ * @since 3.4.0
+ *
  */
 
 public class TagBsButtonModal extends TagBsButton{

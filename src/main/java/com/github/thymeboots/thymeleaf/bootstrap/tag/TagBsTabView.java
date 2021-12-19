@@ -50,6 +50,10 @@ import org.thymeleaf.model.IOpenElementTag;
  * &nbsp;&nbsp;&nbsp;&lt;tb:tab id="tab2" title="Header2"&gtTab2 text &lt;/tb:tab&gt;<br> 
  * &lt;tb:/tabView&gt;<br/> 
  * 
+ * @author Rifat Yilmaz
+ *
+ * @since 3.4.0
+ *
  */
 public class TagBsTabView extends com.github.thymeboots.thymeleaf.bootstrap.comp.UIOutput {
 	private static final String TAG_NAME       = "tabView";

@@ -24,9 +24,14 @@ package com.github.thymeboots.thymeleaf.bootstrap.tag;
 import org.thymeleaf.templatemode.TemplateMode;
 
 /**
- * <p>Represents an bootstrap <code>select</code> element
+ * <p>Represents an bootstrap <code>select</code> control element
  * <p><strong>Examples</strong> <br> 
  * &lt;tb:select&gt;&lt;tb:/select&gt;
+ * 
+ * @author Rifat Yilmaz
+ *
+ * @since 3.4.0
+ *
  */
 public class TagBsSelect extends com.github.thymeboots.thymeleaf.bootstrap.tag.TagBsInput {
 	private static final String TAG_NAME       = "select";
@@ -45,9 +50,11 @@ public class TagBsSelect extends com.github.thymeboots.thymeleaf.bootstrap.tag.T
     public String getHtmlTagStyleClass() {
     	String ret=TAG_BOOTSCLASS;
     	if (this.isCustom()) {
-    		ret=TAG_CUSTOMSELECT;
-    		ret=(ret+" "+sizeClass()).trim();
+    		ret=TAG_CUSTOMSELECT;    		
     	}
+    	ret=(ret+" "+sizeClass()).trim();
+    	
+    	
     	return ret;
     }    
     @Override
@@ -65,6 +72,9 @@ public class TagBsSelect extends com.github.thymeboots.thymeleaf.bootstrap.tag.T
     	if (!this.isNumber(size) ) {
     		if (this.isCustom()) {
     			ret=TAG_CUSTOMSELECT+"-"+size;
+    		}
+    		else {
+    			ret=TAG_BOOTSCLASS+"-"+size;
     		}
     	}    	
     	return ret;

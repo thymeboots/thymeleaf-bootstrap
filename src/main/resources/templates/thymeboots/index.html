@@ -18,6 +18,7 @@
 
 	
 <script>
+  $(document).ready(function(){ $('[data-toggle="tooltip"]').tooltip();});
 </script>
 
 <body>
@@ -87,15 +88,25 @@
 				    			</tb:tab>	
 				    			<tb:tab header="Icon">
 				    				<div th:replace="/thymeboots/docs/3.4/components/icon :: icon"></div>
+				    			</tb:tab>	
+				    			<tb:tab header="Jumbotron">
+				    				<div th:replace="/thymeboots/docs/3.4/components/jumbotron :: jumbotron"></div>
 				    			</tb:tab>		
+
 				    			<tb:tab header="Modal">
 				    				<div th:replace="/thymeboots/docs/3.4/components/modal :: modal"></div>
+				    			</tb:tab>	
+				    			<tb:tab header="Navbar">
+				    				<div th:replace="/thymeboots/docs/3.4/components/navbar :: navbar"></div>
 				    			</tb:tab>		
 				    			<tb:tab header="NavLink">
 				    				<div th:replace="/thymeboots/docs/3.4/components/navlink :: navlink"></div>
 				    			</tb:tab>		
 				    			<tb:tab header="NavList">
 				    				<div th:replace="/thymeboots/docs/3.4/components/navlist :: navlist"></div>
+				    			</tb:tab>	
+				    			<tb:tab header="Progress">
+				    				<div th:replace="/thymeboots/docs/3.4/components/progress :: progress"></div>
 				    			</tb:tab>	
 				    			<tb:tab header="Spinner">
 				    				<div th:replace="/thymeboots/docs/3.4/components/spinner :: spinner"></div>
@@ -130,6 +141,9 @@
 				    			</tb:tab>
 				    			<tb:tab header="Input">
 				    				<div th:replace="/thymeboots/docs/3.4/inputs/input :: input"></div>
+				    			</tb:tab>
+				    			<tb:tab header="Password">
+				    				<div th:replace="/thymeboots/docs/3.4/inputs/password :: password"></div>
 				    			</tb:tab>
 				    			<tb:tab header="Select">
 				    				<div th:replace="/thymeboots/docs/3.4/inputs/select :: select"></div>

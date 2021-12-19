@@ -38,6 +38,10 @@ import org.thymeleaf.templatemode.TemplateMode;
  * &lt;tb:alert severity="warning" header="Warning" closable="true" value="Alert message" &gt;  &lt;/tb:alert&gt; <br>
  * &lt;tb:alert look="warning" value="Alert message" &gt;  &lt;/tb:alert&gt; <br> 
  * 
+ * @author Rifat Yilmaz
+ *
+ * @since 3.4.0
+ *
  */
 public class TagBsAlert extends com.github.thymeboots.thymeleaf.bootstrap.comp.UIOutput {
 	private static final String TAG_NAME       = "alert";

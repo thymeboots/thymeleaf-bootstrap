@@ -39,6 +39,10 @@ import org.thymeleaf.templatemode.TemplateMode;
  * &lt;tb:spinner type="border" value="loading" size="sm" look="info"&gt;  &lt;tb:/spinner&gt; <br>
  * &lt;tb:spinner type="grow"   value="loading" size="md" look="danger"&gt;  &lt;tb:/spinner&gt; <br>
  * 
+ * @author Rifat Yilmaz
+ *
+ * @since 3.4.0
+ *
  */
 
 public class TagBsSpinner extends com.github.thymeboots.thymeleaf.bootstrap.comp.UIOutput {

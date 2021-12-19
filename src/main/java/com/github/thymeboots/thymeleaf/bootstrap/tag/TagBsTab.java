@@ -30,7 +30,11 @@ import org.thymeleaf.templatemode.TemplateMode;
  *  
  * <p><strong>Examples</strong> <br> 
  * &lt;tb:tab header="tab header" &gt;&lt;tb:/tab&gt;
- *  
+ * 
+ * @author Rifat Yilmaz
+ *
+ * @since 3.4.0
+ *
  */
 public class TagBsTab extends com.github.thymeboots.thymeleaf.bootstrap.tag.TagBsTabCard  {
 	private static final String TAG_NAME   = "tab";

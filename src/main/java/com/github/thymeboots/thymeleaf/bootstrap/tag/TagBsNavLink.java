@@ -39,6 +39,10 @@ import org.thymeleaf.templatemode.TemplateMode;
  * <p><strong>Examples</strong> <br> 
  * &lt;tb:navLink href="#" type="dropitem" value="Link name" &gt; &lt;tb:/navLink&gt;
  *
+  * @author Rifat Yilmaz
+ *
+ * @since 3.4.0
+ *
  */
 public class TagBsNavLink extends com.github.thymeboots.thymeleaf.bootstrap.comp.UIOutput {
 	private static final String TAG_NAME       = "navLink";
@@ -69,24 +73,46 @@ public class TagBsNavLink extends com.github.thymeboots.thymeleaf.bootstrap.comp
     public TagBsNavLink(final String dialectPrefix, String    tagVersion) {
         super(tagVersion,TemplateMode.HTML, dialectPrefix, TAG_NAME, true, null, false, PRECEDENCE);
     }    
+    public TagBsNavLink(
+    		String             tagVersion,
+            final TemplateMode templateMode, final String dialectPrefix,
+            final String elementName, final boolean prefixElementName,
+            final String attributeName, final boolean prefixAttributeName,
+            final int precedence) {
+        super(tagVersion,templateMode, dialectPrefix, elementName, prefixElementName,attributeName, prefixAttributeName, precedence);        
+    }
         
     public String getHref() {
     	return this.getAttributeValue(PropertyKeys.href.toString());
     }          
     public String getType() {
-    	String ret= this.nvl(this.getAttributeValue(PropertyKeys.type.toString()),"");
-    	if (ret.isBlank()) {
-    		ret="dropitem";
-    	}
-    	return ret;
+    	return this.nvl(this.getAttributeValue(PropertyKeys.type.toString()),"");
     }      
     public String getValue() {
     	return this.getAttributeValue(PropertyKeys.value.toString());
-    }      
+    }          
+
+    /**
+     * if value==null and href==null means this component divider
+     * @return true:means divider
+     */
+    protected boolean isDividerLink() {
+    	boolean ret=false;    	
+    	String value=this.getAttributeValue(PropertyKeys.value.toString());
+    	String href =this.getAttributeValue(PropertyKeys.href.toString());
+    	if (value==null && href==null) {
+    		ret=true;
+    	}
+    	return ret;
+    }          
         
     @Override
     public String getHtmlTag() {
-    	return TAG_HTML;
+    	String ret= TAG_HTML;
+    	if (isDividerLink()) {
+    		ret="li";
+    	}
+    	return ret;
     } 
     @Override
     public String getHtmlTagStyleClass() {
@@ -98,7 +124,11 @@ public class TagBsNavLink extends com.github.thymeboots.thymeleaf.bootstrap.comp
     	else if ("menuitem".equals(type)) {
     		ret=TAG_BOOTSCLASS_MENUITEM;
     	}
-    	    		
+    	
+    	if (isDividerLink()) {
+    		ret="dropdown-divider divider";
+    	}
+    	
     	return ret;
     }
     @Override

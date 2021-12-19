@@ -27,7 +27,12 @@ import org.thymeleaf.templatemode.TemplateMode;
  * <p>Represents an bootstrap <code>formfloat</code> element
  * <p><strong>Examples</strong> <br> 
  * &lt;tb:formfloat&gt;&lt;/tb:formfloat&gt;
- * 
+ *
+ * @author Rifat Yilmaz
+ *
+ * @since 3.4.0
+ *
+ 
  */
 public class TagBsFormfloat extends com.github.thymeboots.thymeleaf.bootstrap.comp.UIOutput {
 	private static final String TAG_NAME       = "formfloat";

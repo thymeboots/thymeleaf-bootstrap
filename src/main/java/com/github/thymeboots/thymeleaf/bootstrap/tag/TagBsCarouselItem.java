@@ -30,6 +30,10 @@ import org.thymeleaf.templatemode.TemplateMode;
  * <p><strong>Examples</strong> <br> 
  * &lt;tb:carouselItem&gt;&lt;tb:/carouselItem&gt;
  * 
+ * @author Rifat Yilmaz
+ *
+ * @since 3.4.0
+ *
  */
 public class TagBsCarouselItem extends com.github.thymeboots.thymeleaf.bootstrap.comp.UIOutput {
 	private static final String TAG_NAME       = "carouselItem";

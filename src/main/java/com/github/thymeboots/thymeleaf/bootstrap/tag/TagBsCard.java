@@ -35,6 +35,10 @@ import org.thymeleaf.templatemode.TemplateMode;
  * <p><strong>Examples</strong> <br> 
  * &lt;tb:card look="warning" header="Card header" value="Card body text" card-title="card title" card-text="card text" collapsible="true" &gt;  &lt;tb:/card&gt; <br/>
  * 
+ * @author Rifat Yilmaz
+ *
+ * @since 3.4.0
+ *
  */
 public class TagBsCard extends com.github.thymeboots.thymeleaf.bootstrap.tag.TagBsTabCard  {
 	private static final String TAG_NAME   = "card";

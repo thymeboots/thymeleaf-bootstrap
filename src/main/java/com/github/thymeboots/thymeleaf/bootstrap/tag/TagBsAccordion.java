@@ -46,6 +46,10 @@ import org.thymeleaf.templatemode.TemplateMode;
  * &nbsp;&nbsp;&nbsp;&lt;tb:tab id="card3" header="Header3"&gtCard3 text &lt;/tb:tab&gt;<br> 
  * &lt;/tb:accordion&gt;<br> 
  * 
+ * @author Rifat Yilmaz
+ *
+ * @since 3.4.0
+ * 
  */
 public class TagBsAccordion extends com.github.thymeboots.thymeleaf.bootstrap.comp.UIOutput {
 	private static final String TAG_NAME       = "accordion";
@@ -98,14 +102,19 @@ public class TagBsAccordion extends com.github.thymeboots.thymeleaf.bootstrap.co
     		Map<String,String> tagattr=tagorj.getAttributeMap();
     		if (tagattr!=null) {
     			id= this.nvl(tagattr.get("id"),"").trim();
-    			if (id.isBlank()) {
-    				id=this.randomId();
-    				Map<String,String> addprops= new HashMap<String,String>();
-    				addprops.put("id", id);
-    				IProcessableElementTag tagnew= cloneTag(context, tagorj, addprops);
-    				model.replace(0, tagnew);
-    			}
     		}
+			if (id.isBlank()) {				
+				id=this.randomId();
+				Map<String,String> addprops= new HashMap<String,String>();
+				addprops.put("id", id);
+				IProcessableElementTag tagnew= cloneTag(context, tagorj, addprops);
+				model.replace(0, tagnew);				
+				/*
+				TemplateMode templateMode=context.getTemplateMode();
+				context.getConfiguration().getModelFactory(templateMode).setAttribute(tagorj, "id", id);
+				model.replace(0, tagorj);
+				*/								
+			}
 		}
 		
 		IProcessableElementTag tag=findBaseTag(model);

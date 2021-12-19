@@ -22,6 +22,16 @@ package com.github.thymeboots.thymeleaf.bootstrap.tag;
 
 import org.thymeleaf.templatemode.TemplateMode;
 
+/**
+ * <p>Represents an bootstrap <code>textarea</code> control element
+ * <p><strong>Examples</strong> <br> 
+ * &lt;tb:textarea&gt;&lt;tb:/textarea&gt;
+ * 
+ * @author Rifat Yilmaz
+ *
+ * @since 3.4.0
+ *
+ */
 public class TagBsTextarea extends TagBsInput  {
 	private static final String TAG_NAME       = "textarea";
 	private static final String TAG_HTML       = "textarea";
@@ -38,7 +48,10 @@ public class TagBsTextarea extends TagBsInput  {
     }         
     @Override
     public String getHtmlTagStyleClass() {
-    	String ret=TAG_BOOTSCLASS;    
+    	String ret=TAG_BOOTSCLASS;  
+    	
+    	ret=(ret+" "+sizeClass()).trim();
+    	
     	return ret;
     }    
     @Override
@@ -46,6 +59,14 @@ public class TagBsTextarea extends TagBsInput  {
     	return null;
     }      
     
+    public String sizeClass() {
+    	String ret="";
+    	String size=this.nvl( this.getSize(),"" );
+    	if (!this.isNumber(size) ) {
+   			ret=TAG_BOOTSCLASS+"-"+size;
+    	}    	
+    	return ret;
+    }      
     
 
 }

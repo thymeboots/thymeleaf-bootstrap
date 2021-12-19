@@ -34,7 +34,7 @@ import org.thymeleaf.templatemode.TemplateMode;
  * <strong>lg     </strong> col-lg: [1,2,...,12] <br>
  * <strong>xl     </strong> col-xl: [1,2,...,12] <br> 
  * <strong>xxl    </strong> col-xxl: [1,2,...,12]<br> 
- * <strong>wd     </strong> w_(%): [1..100]<br>
+ * <strong>w      </strong> w_(%): [1..100]<br>
  * 
  * <p><strong>Examples</strong> <br> 
  * &lt;tb:column align="center" xs="12" md="6" xxl="4" &gt;  &lt;tb:/column&gt;<br>
@@ -42,6 +42,10 @@ import org.thymeleaf.templatemode.TemplateMode;
  * &lt;tb:column col=""  &gt;  &lt;tb:/column&gt;<br>
  * &lt;tb:column col="6"  &gt;  &lt;tb:/column&gt;<br>
  * 
+ * @author Rifat Yilmaz
+ *
+ * @since 3.4.0
+ *
  */
 public class TagBsColumn extends com.github.thymeboots.thymeleaf.bootstrap.comp.UIOutput {
 	private static final int    PRECEDENCE     = 1000;
@@ -68,9 +72,8 @@ public class TagBsColumn extends com.github.thymeboots.thymeleaf.bootstrap.comp.
 		/**col-xxl or xx-large-screen*/
 		,xxl
 		/**span, col-md or medium-screen*/
-		,span,
-		/**w_value(%)*/
-		wd;
+		,span;
+		
 	 
 	   private String toString;
        PropertyKeys(String toString) { this.toString = toString; }
@@ -123,18 +126,6 @@ public class TagBsColumn extends com.github.thymeboots.thymeleaf.bootstrap.comp.
     	return ret;
     }
 
-    private String wdClass() {
-    	String ret="";
-    	String key=PropertyKeys.wd.toString();
-    	String val =this.getAttributeValue(key);
-    	if (val!=null) {
-			if (!val.isBlank()) {
-				val=val.trim();
-				ret="w-"+val;
-			}    		
-    	}    	
-    	return ret;
-    }
     
     @Override
     public String getHtmlTagStyleClass() {
@@ -163,15 +154,12 @@ public class TagBsColumn extends com.github.thymeboots.thymeleaf.bootstrap.comp.
     		ret=TAG_BOOTSCLASS;
     	}
     	
+    	//width is dominant prop value. its will be added to class prop
+    	String width= this.nvl(this.getWidth(),"").trim();
+    	if (!width.isBlank()) {ret="";}
+    	
     	String align=alignClass() ;
     	ret=(ret+" "+align).trim();
-
-    	String wdClass=wdClass() ;
-    	if (!wdClass.isBlank()) {
-    		ret=wdClass;
-    	}
-    	
-    	
     	
     	return ret;
     }

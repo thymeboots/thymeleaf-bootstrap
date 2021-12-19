@@ -41,7 +41,12 @@ import com.github.thymeboots.thymeleaf.bootstrap.comp.FacetNamesEnum;
  * <p><strong>Examples</strong> <br> 
  * &lt;tb:modal header="Title" value="Text metin"&gt;&lt;/tb:modal&gt;<br>
  * &lt;tb:modal header="Title"&gt;Text metin&lt;/tb:modal&gt;<br>
- * &lt;tb:modal header="Title" footer="footer text" value="body text" look="primary"  closable="false" centered="true" backdrop="true" draggable="true" resizable="true" &gt;&lt;/tb:modal&gt;<br> 
+ * &lt;tb:modal header="Title" footer="footer text" value="body text" look="primary"  closable="false" centered="true" backdrop="true" draggable="true" resizable="true" &gt;&lt;/tb:modal&gt;<br>
+ *  
+ * @author Rifat Yilmaz
+ *
+ * @since 3.4.0
+ *  
  */
 public class TagBsModal extends com.github.thymeboots.thymeleaf.bootstrap.comp.UIOutput {
 	private static final String TAG_NAME       = "modal";

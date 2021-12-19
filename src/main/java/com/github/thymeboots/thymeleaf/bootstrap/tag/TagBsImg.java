@@ -23,14 +23,18 @@ package com.github.thymeboots.thymeleaf.bootstrap.tag;
 import org.thymeleaf.templatemode.TemplateMode;
 
 /**
- * <p>Represents an bootstrap <code>img</code> controls
+ * <p>Represents an bootstrap <code>img</code> element
  * 
  * <p><strong>Attributes</strong> <br>
  * <strong>tooltip          </strong> tooltip mesage <br>
  * <strong>tooltip-position </strong> tooltip position [right,left,auto,up,down] auto:default <br>
  * <p><strong>Examples</strong> <br> 
  * &lt;tb:img tooltip="tooltip message" tooltip-position="right" src="/images/bootstrap/image.jpg" &gt;&lt;tb:/img&gt;
- *  
+ * 
+ * @author Rifat Yilmaz
+ *
+ * @since 3.4.0
+ *
  */
 public class TagBsImg extends com.github.thymeboots.thymeleaf.bootstrap.comp.UIOutput {
 	private static final String TAG_NAME       = "img";

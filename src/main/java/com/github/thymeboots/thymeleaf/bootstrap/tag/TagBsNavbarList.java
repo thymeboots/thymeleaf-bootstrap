@@ -23,7 +23,7 @@ package com.github.thymeboots.thymeleaf.bootstrap.tag;
 import org.thymeleaf.templatemode.TemplateMode;
 
 /**
- * <p>Represents an HTML <code>navList</code> element
+ * <p>Represents an HTML <code>navbarList</code> element
  * <p><strong>Attributes</strong> <br>
  * <strong>layout       </strong> layout attribute: [vertical,inline] , inline:default value<br>
  * 
@@ -38,33 +38,16 @@ import org.thymeleaf.templatemode.TemplateMode;
  * @since 3.4.0
  *
  */
-public class TagBsNavList extends com.github.thymeboots.thymeleaf.bootstrap.comp.UIOutput {
-	private static final String TAG_NAME       = "navList";
+public class TagBsNavbarList extends com.github.thymeboots.thymeleaf.bootstrap.comp.UIOutput {
+	private static final String TAG_NAME       = "navbarList";
 	private static final String TAG_HTML       = "ul";
-	private static final String TAG_BOOTSCLASS_LIST     = "nav-list";	
-	private static final String TAG_BOOTSCLASS_VERTICAL = "flex-column";
+	private static final String TAG_BOOTSCLASS = "navbar-nav";	
 	private static final int    PRECEDENCE = 1000;
 
-    public TagBsNavList(final String dialectPrefix, String    tagVersion) {
+    public TagBsNavbarList(final String dialectPrefix, String    tagVersion) {
         super(tagVersion,TemplateMode.HTML, dialectPrefix, TAG_NAME, true, null, false, PRECEDENCE);
     }
 	
-	protected enum PropertyKeys {
-	   layout;
-		
-	   private String toString;
-       PropertyKeys(String toString) { this.toString = toString; }
-       PropertyKeys() { }
-       public String toString() {
-           return ((toString != null) ? toString : super.toString());
-       }			
-	}	
-	
-        
-    public String getLayout() {
-    	return this.getAttributeValue(PropertyKeys.layout.toString());
-    }      
-    
         
     @Override
     public String getHtmlTag() {
@@ -72,12 +55,7 @@ public class TagBsNavList extends com.github.thymeboots.thymeleaf.bootstrap.comp
     } 
     @Override
     public String getHtmlTagStyleClass() {
-    	String ret="nav "+TAG_BOOTSCLASS_LIST;
-    	
-    	String layout=this.nvl(this.getLayout(), "");
-    	if ("vertical".equals(layout)) {
-    		ret="nav "+TAG_BOOTSCLASS_VERTICAL;
-    	}
+    	String ret="nav "+TAG_BOOTSCLASS+" mr-auto";
     	return ret;
     }
     

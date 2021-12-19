@@ -43,6 +43,10 @@ import com.github.thymeboots.thymeleaf.bootstrap.comp.FacetNamesEnum;
  * &nbsp;&nbsp;&nbsp;&lt;input type="text" class="form-control"&gt; <br>
  * &lt;/tb:inputgroup&gt;
  * 
+ * @author Rifat Yilmaz
+ *
+ * @since 3.4.0
+ *
  */
 public class TagBsInputgroup extends com.github.thymeboots.thymeleaf.bootstrap.comp.UIOutput {
 	private static final String TAG_NAME       = "inputgroup";

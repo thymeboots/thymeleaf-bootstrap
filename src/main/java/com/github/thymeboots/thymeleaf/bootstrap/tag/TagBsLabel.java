@@ -27,6 +27,11 @@ import org.thymeleaf.templatemode.TemplateMode;
  * <p>Represents an bootstrap <code>label</code> element
  * <p><strong>Examples</strong> <br> 
  * &lt;tb:label&gt;&lt;tb:/label&gt;
+ * 
+ * @author Rifat Yilmaz
+ *
+ * @since 3.4.0
+ * 
  */
 public class TagBsLabel extends com.github.thymeboots.thymeleaf.bootstrap.comp.UIOutput {
 	private static final String TAG_NAME       = "label";

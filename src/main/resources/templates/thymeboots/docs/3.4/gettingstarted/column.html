@@ -107,15 +107,14 @@
 				<br><span> &nbsp;&nbsp;<code><</code>/tb:container<code>></code>        </span>			
 			</div>
 
-			<h1>wd atribute ( w-%): w-100 means breakline</h1>
+			<h1>w (width) atribute ( w-%): w-100 means breakline</h1>
  			<tb:container>				
 				<tb:row>
 					<tb:column class="border" style="background:gray;">col1</tb:column>
 					<tb:column class="border" style="background:gray;">col2</tb:column>
-					<tb:column wd="100"></tb:column>
+					<tb:column w="100"></tb:column>
 					<tb:column class="border" style="background:gray;">col3</tb:column>
-					<tb:column class="border" style="background:gray;">col4</tb:column>
-					
+					<tb:column class="border" style="background:gray;" bg="primary" fg="white">col4</tb:column>					
 				</tb:row>			
 			</tb:container >
 
@@ -124,9 +123,9 @@
 				<br><span> &nbsp;&nbsp;&nbsp;&nbsp;<code><</code>tb:row<code>></code>        </span>
 				<br><span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>tb:column<code>></code> col1 <code><</code>/tb:column<code>></code>       </span>				
 				<br><span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>tb:column<code>></code> col2<code><</code>/tb:column<code>></code>       </span>
-				<br><span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>tb:column wd="100"<code>></code><code><</code>/tb:column<code>></code>       </span>
+				<br><span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>tb:column w="100"<code>></code><code><</code>/tb:column<code>></code>       </span>
 				<br><span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>tb:column<code>></code> col3 <code><</code>/tb:column<code>></code>       </span>
-				<br><span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>tb:column<code>></code> col4 <code><</code>/tb:column<code>></code>       </span>
+				<br><span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>tb:column bg="primary" fg="white"<code>></code> col4 <code><</code>/tb:column<code>></code>       </span>
 				<br><span> &nbsp;&nbsp;&nbsp;&nbsp;<code><</code>/tb:row<code>></code>        </span>
 				<br><span> &nbsp;&nbsp;<code><</code>/tb:container<code>></code>        </span>			
 			</div>
@@ -145,7 +144,7 @@
 	            <tr><td>lg</td>  <td></td>  <td>.col-lg</td></tr>
 	            <tr><td>xl</td>  <td></td>  <td>.col-xl</td></tr>
 	            <tr><td>xxl</td> <td></td>  <td>.col-xxl</td></tr>	            
-	            <tr><td>wd</td>  <td></td>  <td>.w-(value) width value (1-100)%</td></tr>
+	            <tr><td>w</td>   <td></td>  <td>.w-(value) width value (1-100)%</td></tr>
 	          </tbody>
 			</table>
 		</tb:card>			    			

@@ -59,11 +59,17 @@ public abstract class UIOutput extends AbstractElementModelProcessor {
 	
 	protected enum PropertyKeys {
 		id
+		,disabled
+		,display("d")
 		,rendered
 	    ,style
-	    ,styleClass
+	    ,styleClass()
 	    ,tooltip
 	    ,tooltipPosition("tooltip-position")
+	    ,width("w")
+	    ,heigth("h")
+	    ,bgColor("bg")
+	    ,fgColor("fg")
 	    ;
 	 
         private String toString;
@@ -149,7 +155,25 @@ public abstract class UIOutput extends AbstractElementModelProcessor {
 		return ret;
 	}	
 	
-	protected void preProcess(ITemplateContext context, IModel model, IElementModelStructureHandler structureHandler) {		
+	protected void preProcess(ITemplateContext context, IModel model, IElementModelStructureHandler structureHandler) {
+		if (this.isAddIdAttribute()) {
+			String id="";
+			ITemplateEvent firsevent=model.get(0);
+			if (firsevent instanceof IProcessableElementTag) {
+				IProcessableElementTag    tagorj= (IProcessableElementTag) firsevent;
+	    		Map<String,String> tagattr=tagorj.getAttributeMap();
+	    		if (tagattr!=null) {
+	    			id= this.nvl(tagattr.get("id"),"").trim();
+	    		}
+				if (id.isBlank()) {				
+					id=this.randomId();
+					Map<String,String> addprops= new HashMap<String,String>();
+					addprops.put("id", id);
+					IProcessableElementTag tagnew= cloneTag(context, tagorj, addprops);
+					model.replace(0, tagnew);				
+				}
+			}
+		}
 	}	
 
 	protected void encodeBegin(ITemplateContext context, IModel model, Map<String,String> attributes )  {		
@@ -158,15 +182,19 @@ public abstract class UIOutput extends AbstractElementModelProcessor {
 	    
 	    
 	    //create tooltip for the item
-	    String tooltip=this.nvl(attributes.get(PropertyKeys.tooltip.toString() ),"").trim();
-	    if (!tooltip.isBlank()) {
-	    	attributes.put("title", tooltip);
-	    	attributes.put("data-toggle", PropertyKeys.tooltip.toString());	 
-	    	attributes.remove(PropertyKeys.tooltip.toString());
-	    }
-	    String tooltipPosition=this.nvl(attributes.get(PropertyKeys.tooltipPosition.toString() ),"").trim();
-	    if (!tooltipPosition.isBlank()) {
-	    	attributes.put("data-placement", tooltipPosition);
+	    if (isAddTooltipAttributes()) {	    	
+		    String tooltip=this.nvl(this.getTooltip(),"").trim();
+		    if (!tooltip.isBlank()) {
+		    	attributes.put("title", tooltip);
+		    	attributes.put("data-toggle", PropertyKeys.tooltip.toString());	 
+		    	attributes.remove(PropertyKeys.tooltip.toString());
+			    
+		    	String tooltipPosition=this.nvl(this.getTooltipPosition(),"").trim();
+			    if (!tooltipPosition.isBlank()) {
+			    	attributes.put("data-placement", tooltipPosition);
+			    }	    	
+
+		    }
 	    }
 	    
 		if (isStandAloneTag()) {
@@ -181,8 +209,8 @@ public abstract class UIOutput extends AbstractElementModelProcessor {
 	}
 	
 	
-    protected void encodeChildren(ITemplateContext context, IModel model,  Map<String,String> attributes)  {
-    	_addChilds(model);    	
+    protected void encodeChildren(ITemplateContext context, IModel model,  Map<String,String> attributes)  {    	
+    	addChilds(model,  this.isAutoEncodeChild());    	
     }
     
     protected void encodeEnd(ITemplateContext context, IModel model,  Map<String,String> attributes)  {
@@ -191,6 +219,22 @@ public abstract class UIOutput extends AbstractElementModelProcessor {
 			model.add(modelFactory.createCloseElementTag(getHtmlTag()));
 		}	    
     		    	        	
+    }
+    
+	/**
+	 * Auto Create Id Attribute 
+	 * @return true:create false:not create id attribute
+	 */
+	protected boolean isAddIdAttribute() {
+		return false;
+	}
+	
+	/**
+	 * Auto Create Tooltip Attribute 
+	 * @return true:create false:not create 
+	 */    
+    protected boolean isAddTooltipAttributes() {
+    	return true;
     }
 
     
@@ -221,13 +265,15 @@ public abstract class UIOutput extends AbstractElementModelProcessor {
     	return "";
     }
     
+    
     /**
      * Add childs event to model
      * @param iModel
+     * @param isAddChild true:adds childs, false:do not add
      * @return
      */
-    protected IModel _addChilds(IModel iModel) {
-    	if (this.isAutoEncodeChild()) {
+    protected IModel addChilds(IModel iModel, boolean isAddChild) {
+    	if (isAddChild) {
         	List<ITemplateEvent> childs=getChilds();
     	    //Child eventler eklenir
     	    if (childs!=null && childs.size()>0) {
@@ -240,7 +286,6 @@ public abstract class UIOutput extends AbstractElementModelProcessor {
     	
 	    return iModel;
     }
-    
 	
 
 
@@ -344,11 +389,25 @@ public abstract class UIOutput extends AbstractElementModelProcessor {
     }
 	
     /**
+     * <p>Return the value of the <code>display</code> property.</p>
+     */    
+    public String getDisplay() {
+    	String ret= this.nvl(this.getAttributeValue(PropertyKeys.display.toString()),"").trim();
+    	String val= this.nvl(this.getAttributeValue(PropertyKeys.display.name() ),"").trim();
+    	ret=(ret+" "+val).trim();
+    	if (ret.isBlank()) {
+    		ret=null;
+    	}
+	    return ret;
+    }      
+
+    /**
      * <p>Return the value of the <code>id</code> property.</p>
      */    
     public String getId() {
     	return this.getAttributeValue(PropertyKeys.id.toString());
     }      
+
     
     /**
      * <p>Return the value of the <code>rendered</code> property.</p>
@@ -366,6 +425,64 @@ public abstract class UIOutput extends AbstractElementModelProcessor {
     }    
     
     /**
+     * <p>Return the value of the <code>w</code> property.</p>
+     */    
+    public String getWidth() {
+    	String ret= this.nvl(this.getAttributeValue(PropertyKeys.width.toString()),"").trim();
+    	String val= this.nvl(this.getAttributeValue(PropertyKeys.width.name() ),"").trim();
+    	ret=(ret+" "+val).trim();
+    	if (ret.isBlank()) {
+    		ret=null;
+    	}
+	    return ret;
+    }  
+    
+    /**
+     * <p>Return the value of the <code>h</code> property.</p>
+     */    
+    public String getHeight() {
+    	String ret= this.nvl(this.getAttributeValue(PropertyKeys.heigth.toString()),"").trim();
+    	String val= this.nvl(this.getAttributeValue(PropertyKeys.heigth.name() ),"").trim();
+    	ret=(ret+" "+val).trim();
+    	if (ret.isBlank()) {
+    		ret=null;
+    	}
+    	return ret;
+    }      
+
+    /**
+     * <p>Return the value of the <code>bg</code> property.</p>
+     */    
+    public String getBgColor() {
+    	String ret = this.nvl(this.getAttributeValue(PropertyKeys.bgColor.toString()),"").trim();
+    	String val1= this.nvl(this.getAttributeValue(PropertyKeys.bgColor.name() ),"").trim();
+    	String val2= this.nvl(this.getAttributeValue("bg-color" ),"").trim();
+    	ret=(ret+" "+val1).trim();
+    	ret=(ret+" "+val2).trim();
+    	if (ret.isBlank()) {
+    		ret=null;
+    	}
+    	return ret;
+    }
+     
+    /**
+     * <p>Return the value of the <code>fg</code> property.</p>
+     */    
+    public String getTextColor() {
+    	String ret = this.nvl(this.getAttributeValue(PropertyKeys.fgColor.toString()),"").trim();
+    	String val1= this.nvl(this.getAttributeValue(PropertyKeys.fgColor.name() ),"").trim();
+    	String val2= this.nvl(this.getAttributeValue("fg-color" ),"").trim();
+    	String val3= this.nvl(this.getAttributeValue("text-color" ),"").trim();
+    	ret=(ret+" "+val1).trim();
+    	ret=(ret+" "+val2).trim();
+    	ret=(ret+" "+val3).trim();
+    	if (ret.isBlank()) {
+    		ret=null;
+    	}
+    	return ret;
+    }      
+    
+    /**
      * <p>Return the value of the <code>style</code> property.</p>
      * <p>Contents: CSS style(s) to be applied when this component is rendered.
      */
@@ -374,6 +491,30 @@ public abstract class UIOutput extends AbstractElementModelProcessor {
     	if (style==null) {style="";}
     	return style;
     }    
+    
+    /**
+     * <p>Return the value of the <code>disabled</code> property.</p>
+     */    
+    public boolean isDisabled() {
+    	boolean ret=false;
+    	String orj=this.getAttributeValue(PropertyKeys.disabled.toString());
+    	String val= this.nvl(orj,"").trim();
+    	if (val.equals("true") || val.equals("yes") ) {
+    		ret=true;
+    	}
+    	else if (val.equals("false") || val.equals("no") ) {
+    		ret=false;
+    	}
+    	else if (orj==null ) {
+    		org.thymeleaf.model.IAttribute attr= this.getAttribute(PropertyKeys.disabled.toString());
+    		if (attr!=null) {
+    			ret=true;  //disabled atrribute setted
+    		}
+    	}
+
+    	return ret;
+    }      
+    
     
     /**
      * <p>Return the value of the <code>styleClass</code> and <code>class</code> property.</p>
@@ -386,18 +527,104 @@ public abstract class UIOutput extends AbstractElementModelProcessor {
     	String _style = this.nvl(getAttributeValue("style-class" ),"");
     	String _style2= this.nvl(getAttributeValue(PropertyKeys.styleClass.toString()),"");
     	
+    	_class+= " "+this.nvl(displayClass(),"");
+    	_class=_class.trim();
+    	_class+= " "+this.nvl(widthClass(),"");
+    	_class=_class.trim();
+    	_class+= " "+this.nvl(heightClass(),"");
+    	_class=_class.trim();
+    	_class+= " "+this.nvl(bgColorClass(),"");
+    	_class=_class.trim();
+    	_class+= " "+this.nvl(textColorClass(),"");
+    	_class=_class.trim();
+    	_class+= " "+this.nvl(disabledClass(),"");
+    	_class=_class.trim();
+    	    	
+    	    	
     	
-    	String ret=_class.trim()+" "+_style.trim()+" "+_style2.trim() ;
+    	java.lang.String ret=_class.trim()+" "+_style.trim()+" "+_style2.trim() ;
     	ret.trim();
     	return ret;
 
-    }    
+    }   
+    
+    private java.lang.String widthClass() {
+    	String ret="";
+    	String val =this.getWidth();
+    	if (val!=null) {
+			if (!val.isBlank()) {
+				val=val.trim();
+				ret="w-"+val;
+			}    		
+    	}    	
+    	return ret;
+    }
+    private java.lang.String heightClass() {
+    	String ret="";
+    	String val =this.getHeight();
+    	if (val!=null) {
+			if (!val.isBlank()) {
+				val=val.trim();
+				ret="h-"+val;
+			}    		
+    	}    	
+    	return ret;
+    }
+    private java.lang.String displayClass() {
+    	String ret="";
+    	String val =this.getDisplay();
+    	if (val!=null) {
+			if (!val.isBlank()) {
+				val=val.trim();
+				ret="d-"+val;
+			}    		
+    	}    	
+    	return ret;
+    }
+    private java.lang.String bgColorClass() {
+    	String ret="";
+    	String val =this.getBgColor();
+    	if (val!=null) {
+			if (!val.isBlank()) {
+				val=val.trim();
+				ret="bg-"+val;
+			}    		
+    	}    	
+    	return ret;
+    }
+    
+    private java.lang.String textColorClass() {
+    	String ret="";
+    	String val =this.getTextColor();
+    	if (val!=null) {
+			if (!val.isBlank()) {
+				val=val.trim();
+				ret="text-"+val;
+			}    		
+    	}    	
+    	return ret;
+    }
+
+    private java.lang.String disabledClass() {
+    	String ret="";
+    	boolean disabled =this.isDisabled();
+    	if (disabled) {
+			ret="disabled";
+		}    		    	
+    	return ret;
+    }
     
     /**
      * <p>Return the value of the <code>tooltip</code> property.</p>
      */
     public java.lang.String getTooltip() {
     	return getAttributeValue(PropertyKeys.tooltip.toString());
+    }    
+    /**
+     * <p>Return the value of the <code>tooltip-position</code> property.</p>
+     */
+    public java.lang.String getTooltipPosition() {
+    	return getAttributeValue(PropertyKeys.tooltipPosition.toString());
     }    
     
     
@@ -469,14 +696,22 @@ public abstract class UIOutput extends AbstractElementModelProcessor {
 				propname.equals("layout")    || propname.equals("closable")      ||
 				propname.equals("xs")        ||
 				propname.equals("sm")        || propname.equals("md")            || propname.equals("lg")       ||
-				propname.equals("xl")        || propname.equals("xxl")           || propname.equals("span")     ||
-				propname.equals("wd")        ||
+				propname.equals("xl")        || propname.equals("xxl")           || propname.equals("span")     ||				
 				propname.equals("prepend")   || propname.equals("append")        || propname.equals("target")   ||
 				propname.equals("styleClass")|| propname.equals("style-class")   || propname.equals("header-class") ||
 				propname.equals("backdrop")  || propname.equals("centered")      || propname.equals("content-class") ||
 				propname.equals("draggable") || propname.equals("resizable")     || propname.equals("scrollable")  ||
 				propname.equals("icon")      || propname.equals("icon-align")    || propname.equals("icon-spin")   ||
-				propname.equals("spin")      || propname.equals("fluid")  				
+				propname.equals("spin")      || propname.equals("fluid")         ||
+				propname.equals("min")       || propname.equals("max")           ||
+				
+				propname.equals("brand")     || propname.equals("brand-href")    ||
+				
+				propname.equals("fgColor")   || propname.equals("fg")            || propname.equals("fg-color") || propname.equals("text-color") ||
+				propname.equals("bgColor")   || propname.equals("bg")            || propname.equals("bg-color") ||
+				propname.equals("heigth")    || propname.equals("h")             ||
+				propname.equals("width")     || propname.equals("w")             ||
+				propname.equals("display")   || propname.equals("d")        
 
 			) {
 				ret=false;
@@ -599,7 +834,7 @@ public abstract class UIOutput extends AbstractElementModelProcessor {
     }
 
 	
-    public  IModel createModel(    		
+    protected  IModel createModel(    		
 			ITemplateContext context,
 			String htmlTag,
 			String text, 
@@ -614,7 +849,7 @@ public abstract class UIOutput extends AbstractElementModelProcessor {
 		return createModel(context,htmlTag,text, props, childs);	
 	}    
 	
-    public  IModel createModel(    		
+    protected  IModel createModel(    		
 			ITemplateContext context,
 			String htmlTag,
 			String text, 
@@ -629,7 +864,7 @@ public abstract class UIOutput extends AbstractElementModelProcessor {
 		return createModel(context,htmlTag,text, props, childs);	
 	}    
     
-    public  IModel createModel(    		
+    protected  IModel createModel(    		
 			ITemplateContext context,
 			String htmlTag,
 			String value,  
@@ -639,7 +874,7 @@ public abstract class UIOutput extends AbstractElementModelProcessor {
 		return createModel(context,htmlTag,value, props, childs);	
 	}    
     
-    public  IModel createModel(    		
+    protected  IModel createModel(    		
 			ITemplateContext context,
 			String htmlTag,
 			String value			
@@ -648,7 +883,7 @@ public abstract class UIOutput extends AbstractElementModelProcessor {
 		List<ITemplateEvent> childs = null;
 		return createModel(context,htmlTag,value, props, childs);	
 	}    
-    public  IModel createModel(    		
+    protected  IModel createModel(    		
 			ITemplateContext context,
 			String htmlTag						
 			) {	    	
@@ -700,7 +935,7 @@ public abstract class UIOutput extends AbstractElementModelProcessor {
      * @param addprops Addtional attribute
      * @return Clone tag
      */
-    public IProcessableElementTag cloneTag(ITemplateContext context, IProcessableElementTag tag, Map<String,String> addprops) {
+    protected IProcessableElementTag cloneTag(ITemplateContext context, IProcessableElementTag tag, Map<String,String> addprops) {
     	IModelFactory modelFactory = context.getModelFactory();
     	
     	//Orjinal attribute alinir

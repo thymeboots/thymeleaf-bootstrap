@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html 	
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:tb="http://www.thymeleaf.org/bootstrap">
+<head>
+</head>
+<body>
+	<div th:fragment="navbar">
+		<h1><a class="btn-link" id="doclinknavbar">Navbar</a></h1>		    							    				
+		<p>The <code><</code>tb:navbar<code>></code> tag <p>
+
+		<h2 id="navbar_example">Example<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="#" href="#navbar_example" style="padding-left: 0.375em;"></a></h2>
+		<div class="bd-example">
+			<tb:navbar brand="Brand" brand-href="#" fluid="true"  >
+				<tb:navbarList>
+					<tb:navLink value="Link1" href="#"></tb:navLink >
+					<tb:navLink value="Link2" href="#"></tb:navLink>
+					<tb:navLink value="Disabled" disabled href="#"></tb:navLink>
+					<tb:dropMenu value="DropMenu">
+						<tb:navLink value="Link1" href="#"></tb:navLink>
+						<tb:divider></tb:divider>
+						<tb:navLink value="Link2" href="#"></tb:navLink>						
+						<tb:navLink value="Link3" href="#"></tb:navLink>
+						<tb:navLink></tb:navLink>
+						<tb:navLink value="Link4" href="#"></tb:navLink> 
+					</tb:dropMenu >
+					<tb:dropMenu value="DropMenu2">
+						<tb:navLink type="dropitem" value="Link1" href="#"></tb:navLink>
+						<tb:navLink type="dropitem" value="Link2" href="#"></tb:navLink>
+					</tb:dropMenu >
+					<tb:dropMenu value="DropMenuItem">
+						<tb:dropItem value="Drop Item 1" href="#"></tb:dropItem>
+						<tb:dropItem value="Drop Item 2" href="#"></tb:dropItem>
+					</tb:dropMenu >			
+				</tb:navbarList>
+				<form class="form-inline my-2 my-lg-0">
+		      		<tb:input  class="mr-sm-2" type="search" placeholder="Search" aria-label="Search"></tb:input>
+		      		<tb:button class="my-2 my-sm-0" look="outline-success" type="submit" >Search</:btbutton>
+		    	</form>		
+			</tb:navbar>
+		</div>
+		<div class="card-header">
+			<strong>Html markup </strong>
+			<div class="card-body" style="background-color: white;" >
+				<table border="0" cellpadding="0" cellspacing="0">
+					<tbody>
+						<tr><td class="code"> <code><</code>tb:navbar brand="Brand" brand-href="#" fluid="true"<code>></code> </td></tr>
+						
+						<tr><td class="code"> &nbsp;&nbsp;&nbsp;<code><</code>tb:navbarList<code>></code> </td></tr>
+						<tr><td class="code"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>tb:navLink value="Link1" href="#"<code>></code><code><</code>/tb:navLink<code>></code> </td></tr>
+						<tr><td class="code"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>tb:navLink value="Link2" href="#"<code>></code><code><</code>/tb:navLink<code>></code> </td></tr>
+						<tr><td class="code"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>tb:navLink value="Disabled" disabled<code>></code><code><</code>/tb:navLink<code>></code> </td></tr>
+						<tr><td class="code"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>tb:dropMenu value="DropMenu"<code>></code> </td></tr>
+						<tr><td class="code"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>tb:navLink value="Link1" href="#"<code>></code><code><</code>/tb:navLink<code>></code> </td></tr>
+						<tr><td class="code"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>tb:divider<code>></code><code><</code>/tb:divider<code>></code> </td></tr>
+						<tr><td class="code"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>tb:navLink value="Link2" href="#"<code>></code><code><</code>/tb:navLink<code>></code> </td></tr>
+						<tr><td class="code"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>tb:navLink value="Link3" href="#"<code>></code><code><</code>/tb:navLink<code>></code> </td></tr>
+						<tr><td class="code"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>tb:navLink<code>></code><code><</code>/tb:navLink<code>></code> </td></tr>
+						<tr><td class="code"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>tb:navLink value="Link4" href="#"<code>></code><code><</code>/tb:navLink<code>></code> </td></tr>
+						<tr><td class="code"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>/tb:dropMenu<code>></code> </td></tr>
+
+						<tr><td class="code"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>tb:dropMenu value="DropMenu2"<code>></code> </td></tr>
+						<tr><td class="code"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>tb:navLink type="dropitem" value="Link1" href="#"<code>></code><code><</code>/tb:navLink<code>></code> </td></tr>
+						<tr><td class="code"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>tb:navLink type="dropitem" value="Link2" href="#"<code>></code><code><</code>/tb:navLink<code>></code> </td></tr>
+						<tr><td class="code"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>/tb:dropMenu<code>></code> </td></tr>
+						
+						<tr><td class="code"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>tb:dropMenu value="DropMenuItem"<code>></code> </td></tr>
+						<tr><td class="code"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>tb:dropItem value="Drop Item 1" href="#"<code>></code><code><</code>/tb:dropItem<code>></code> </td></tr>
+						<tr><td class="code"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>tb:dropItem value="Drop Item 2" href="#"<code>></code><code><</code>/tb:dropItem<code>></code> </td></tr>
+						<tr><td class="code"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>/tb:dropMenu<code>></code> </td></tr>
+						
+						<tr><td class="code"> &nbsp;&nbsp;&nbsp;<code><</code>/tb:navbarList<code>></code> </td></tr>
+						
+						<tr><td class="code"> &nbsp;&nbsp;&nbsp;<code><</code>form class="form-inline my-2 my-lg-0"<code>></code> </td></tr>
+						<tr><td class="code"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>tb:input class="mr-sm-2" type="search" placeholder="Search" aria-label="Search"<code>></code><code><</code>/tb:input<code>></code> </td></tr>
+						<tr><td class="code"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code><</code>tb:button class="my-2 my-sm-0" type="search" look="outline-success" type="submit"<code>></code>Search<code><</code>/tb:button<code>></code> </td></tr>
+						<tr><td class="code"> &nbsp;&nbsp;&nbsp;<code><</code>/form<code>></code> </td></tr>
+						
+						<tr><td class="code"> <code><</code>/tb:navbar<code>></code> </td></tr>
+					</tbody>
+				</table>			    				
+			</div>			    							    				
+		</div>
+		<tb:card collapsible="true" header="Attributes">
+			<table class="table table-striped table-hover" style="background-color: #fff">
+	          <thead>
+	            <tr><th>Attribute</th>  <th>Default value</th>   <th>Description</th></tr>
+	          </thead>
+	          <tbody>
+	            <tr><td>brand</td>         <td></td>      <td>Brand name</td></tr>
+	            <tr><td>brand-href</td>    <td></td>      <td>Brand link</td></tr>
+	            <tr><td>fluid</td>         <td>false</td> <td>true:container-fluid , false:container</td></tr>		         
+	            <tr><td>fixed</td>         <td></td>      <td>fixed position. [top,bottom]</td></tr>
+	            <tr><td>sticky</td>        <td>false</td> <td>true:sticky active, not fixed <br> sticky=true fixed=top  means sticky-top</td></tr>
+	          </tbody>
+			</table>
+		</tb:card>			    			
+
+    </div>
+</body>
+</html >
