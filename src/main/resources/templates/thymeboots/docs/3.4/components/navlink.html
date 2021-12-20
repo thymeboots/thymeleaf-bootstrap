@@ -14,13 +14,16 @@
 		<div class="bd-example">
 			<tb:row>
 				<tb:column>
-					<ul><tb:navLink href="#" type="link" value="Link 1"></tb:navLink></ul>
+					<ul>
+						<tb:navLink href="#" type="link" value="Link 1"></tb:navLink>
+						<tb:navLink href="#" type="link" value="Link 2"></tb:navLink>
+					</ul>
 				</tb:column>
 				<tb:column>
-					<ul><tb:navLink href="#" type="menuitem" value="Menu Item 1"></tb:navLink></ul>
-				</tb:column>
-				<tb:column>
-					<ul><tb:navLink href="#" type="dropitem" value="Drop Item 1" ></tb:navLink></ul>
+					<ul>
+					   <tb:navLink href="#" type="dropitem" value="Drop Item 1" ></tb:navLink>
+					   <tb:navLink href="#" type="dropitem" value="Drop Item 2" ></tb:navLink>
+					</ul>
 				</tb:column>		    						
 
 			</tb:row>		    									    					    					
@@ -30,8 +33,15 @@
 			<div class="card-body" style="background-color: white;" >
 				<table border="0" cellpadding="0" cellspacing="0">
 					<tbody>
-						<tr><td class="code"> <code><</code>tb:navLink href="#" type="link"     value="Link 1"<code>></code><code><</code>/tb:navLink<code>></code> </td></tr>
-						<tr><td class="code"> <code><</code>tb:navLink href="#" type="menuitem" value="Menu Item 1"<code>></code><code><</code>/tb:navLink<code>></code> </td></tr>
+						<tr><td class="code"> <code><</code>ul<code>></code></td></tr>
+						<tr><td class="code"> <code><</code>tb:navLink href="#" type="link"  value="Link 1"<code>></code><code><</code>/tb:navLink<code>></code> </td></tr>
+						<tr><td class="code"> <code><</code>tb:navLink href="#" type="link"  value="Link 2"<code>></code><code><</code>/tb:navLink<code>></code> </td></tr>
+						<tr><td class="code"> <code><</code>/ul<code>></code> </td></tr>
+						<tr><td class="code"> <code><</code>ul<code>></code></td></tr>
+						<tr><td class="code"> <code><</code>tb:navLink href="#" type="dropitem" value="Drop Item 1"<code>></code><code><</code>/tb:navLink<code>></code> </td></tr>
+						<tr><td class="code"> <code><</code>tb:navLink href="#" type="dropitem" value="Drop Item 2"<code>></code><code><</code>/tb:navLink<code>></code> </td></tr>
+						<tr><td class="code"> <code><</code>/ul<code>></code> </td></tr>
+						
 					</tbody>
 				</table>			    				
 			</div>			    							    				
@@ -44,7 +54,7 @@
 	          <tbody>
 	          	<tr><td>disabled</td> <td></td>      <td>false:not disabled, true or null:disabled </td></tr>
 	          	<tr><td>href</td>     <td></td>      <td>link</td></tr>
-	          	<tr><td>type</td>     <td>link</td>  <td>link type. can be link, dropitem( or menuitem )</td></tr>
+	          	<tr><td>type</td>     <td>link</td>  <td>link type. can be link, dropitem </td></tr>
 	            <tr><td>value</td>    <td></td>      <td>link label</td></tr>	            
 	          </tbody>
 			</table>

@@ -49,7 +49,9 @@ public class TagBsNavLink extends com.github.thymeboots.thymeleaf.bootstrap.comp
 	private static final String TAG_HTML       = "a";
 	private static final String TAG_BOOTSCLASS_NAVLINK = "nav-link";
 	private static final String TAG_BOOTSCLASS_DROPITEM= "dropdown-item";
-	private static final String TAG_BOOTSCLASS_MENUITEM= "dropdown-item";
+	private static final String TAG_BOOTSCLASS_GROUPITEM="list-group-item";
+	private static final String TAG_BOOTSCLASS_BUTTON  = "btn";
+	
 	
 	private static final int    PRECEDENCE = 1000;
 	
@@ -118,11 +120,14 @@ public class TagBsNavLink extends com.github.thymeboots.thymeleaf.bootstrap.comp
     public String getHtmlTagStyleClass() {
     	String ret=TAG_BOOTSCLASS_NAVLINK;    
     	String type=this.getType();
-    	if ("dropitem".equals(type)) {
+    	if ("dropitem".equals(type) || "menuitem".equals(type) ) {
     		ret=TAG_BOOTSCLASS_DROPITEM;
     	}
-    	else if ("menuitem".equals(type)) {
-    		ret=TAG_BOOTSCLASS_MENUITEM;
+    	else if ("groupitem".equals(type)) {
+    		ret=TAG_BOOTSCLASS_GROUPITEM;
+    	}
+    	else if ("button".equals(type)) {
+    		ret=TAG_BOOTSCLASS_BUTTON;
     	}
     	
     	if (isDividerLink()) {

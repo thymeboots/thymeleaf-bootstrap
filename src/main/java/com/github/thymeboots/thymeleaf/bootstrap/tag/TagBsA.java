@@ -51,7 +51,11 @@ import org.thymeleaf.templatemode.TemplateMode;
 public class TagBsA extends com.github.thymeboots.thymeleaf.bootstrap.comp.UIOutput {
 	private static final String TAG_NAME       = "a";
 	private static final String TAG_HTML       = "a";
-	private static final String TAG_BOOTSCLASS = "";
+	private static final String TAG_BOOTSCLASS_NAVLINK = "nav-link";
+	private static final String TAG_BOOTSCLASS_DROPITEM= "dropdown-item";
+	private static final String TAG_BOOTSCLASS_BUTTON  = "btn";
+	private static final String TAG_BOOTSCLASS_GROUPITEM="list-group-item";
+	
 	private static final int    PRECEDENCE = 1000;
 	
     public TagBsA(final String dialectPrefix, String    tagVersion) {
@@ -62,6 +66,7 @@ public class TagBsA extends com.github.thymeboots.thymeleaf.bootstrap.comp.UIOut
 		href
 		,look
 		,size
+		,type
 		,value;
 				
        private String toString;
@@ -84,19 +89,42 @@ public class TagBsA extends com.github.thymeboots.thymeleaf.bootstrap.comp.UIOut
     public String getSize() {
     	return this.getAttributeValue(PropertyKeys.size.toString());
     }      
-            		
+    public String getType() {
+    	return this.nvl(this.getAttributeValue(PropertyKeys.type.toString()),"");
+    }      
     public String getValue() {
     	return this.getAttributeValue(PropertyKeys.value.toString());
     }      
     
-    
+    private String getTypeClass() {
+    	String ret ="";
+    	String type=this.nvl( this.getType() , "").trim();
+    	if (type.equals("button")) {
+    		ret=TAG_BOOTSCLASS_BUTTON;
+    	}
+    	else if (type.equals("dropitem") || type.equals("menuitem") ) {
+    		ret=TAG_BOOTSCLASS_DROPITEM;
+    	}
+    	else if (type.equals("navlink") ) {
+    		ret=TAG_BOOTSCLASS_NAVLINK;
+    	}
+    	else if (type.equals("groupitem") ) {
+    		ret=TAG_BOOTSCLASS_GROUPITEM;
+    	}
+    	
+    	return ret;
+    }
     private String lookClass() {
     	String ret="";
     	String val =getLook();
     	if (val!=null) {
 			if (!val.isBlank()) {
 				val=val.trim();
-				ret=TAG_BOOTSCLASS+"-"+val;
+				String typeclass=getTypeClass();
+				if (typeclass.isBlank()) {
+					typeclass="text";
+				}
+				ret=typeclass+"-"+val;
 			}    		
     	}    	
     	return ret;
@@ -108,7 +136,11 @@ public class TagBsA extends com.github.thymeboots.thymeleaf.bootstrap.comp.UIOut
     	if (val!=null) {
 			if (!val.isBlank()) {
 				val=val.trim();
-				ret=TAG_BOOTSCLASS+"-"+val;
+				String typeclass=getTypeClass();
+				if (typeclass.isBlank()) {
+					typeclass="btn";
+				}				
+				ret=typeclass+"-"+val;
 			}    		
     	}    	
     	return ret;
@@ -120,7 +152,7 @@ public class TagBsA extends com.github.thymeboots.thymeleaf.bootstrap.comp.UIOut
     } 
     @Override
     public String getHtmlTagStyleClass() {
-    	String ret=TAG_BOOTSCLASS;
+    	String ret=getTypeClass();
     	
     	String look=lookClass();
     	ret=(ret+" "+look).trim();
@@ -128,10 +160,17 @@ public class TagBsA extends com.github.thymeboots.thymeleaf.bootstrap.comp.UIOut
     	String size=sizeClass();
     	ret=(ret+" "+size).trim();
     	
+    	if ("groupitem".equals(this.getType())) {
+    		ret+=" "+"list-group-item-action";
+    	}
+    	
     	return ret;
     }
     @Override
 	public void encodeBegin(ITemplateContext context, IModel model, Map<String,String> attributes )  {
+    	if ("button".equals(this.getType()) ) {
+    		attributes.put("role", "button");
+    	}
 	    super.encodeBegin(context, model, attributes);
 	}	
     @Override

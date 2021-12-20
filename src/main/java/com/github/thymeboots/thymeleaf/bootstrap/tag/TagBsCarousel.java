@@ -61,8 +61,8 @@ public class TagBsCarousel extends com.github.thymeboots.thymeleaf.bootstrap.com
     }
     
 	protected enum PropertyKeys {		
-		 showIndicators
-		,startAnimation;	
+		 showIndicators("show-indicators")
+		,startAnimation("start-animation");	
 	 
        private String toString;
        PropertyKeys(String toString) { this.toString = toString; }
