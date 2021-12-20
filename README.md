@@ -6,11 +6,12 @@
 This software is licensed under the Apache License 2.0.
 
 <h2>Requirements (3.4.x)</h2>
-Thymeleaf <strong>3</strong>.0<br>
-Bootstrap <strong>4</strong>.2.1<br>
-Jquery 3.0.0<br>
-Font Awesome 5.11.2 (Free)<br>
-Html5<br>
-
+<ul>
+ <li>Thymeleaf <strong>3</strong>.0</li>
+ <li>Bootstrap <strong>4</strong>.2.1</li>
+ <li>Jquery 3.0.0</li>
+ <li>Font Awesome 5.11.2 (Free)</li>
+ <li>Html5</li>
+</ul>
 <h2>Author</h2>
 Rifat YILMAZ
